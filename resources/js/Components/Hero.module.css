@@ -1,0 +1,21 @@
+.backgroundImage{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+}
+
+.hero{
+    height: 100vh;
+    padding: 80px 0;
+}
+
+.imageAb{
+    position: absolute;
+    max-width: 25rem;
+    width: 50%;
+    right: 9rem;
+    bottom: 0;
+    margin: auto;
+}
