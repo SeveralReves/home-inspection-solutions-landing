@@ -43,7 +43,7 @@ export default function Header() {
                             </li>
                         ))}
                     </ul>
-                    <button className="bg-secondary hover:bg-primary transition text-white font-semibold py-2 px-6 rounded-full shadow-lg">
+                    <button className="bg-secondary hover:bg-primary transition duration-300 ease-in-out text-white font-semibold py-2 px-6 rounded-full shadow-lg">
                         SERVICES
                     </button>
                 </nav>
