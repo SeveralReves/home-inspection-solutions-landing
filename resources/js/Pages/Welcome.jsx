@@ -1,6 +1,7 @@
 import { Link, Head } from '@inertiajs/react';
 import Header from '../Components/Header';
 import Hero from '../Components/Hero';
+import Footer from '../Components/Footer.jsx';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
@@ -8,6 +9,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             <Head />
             <Header />
             <Hero />
+            <Footer />
             {/* <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
                 <div className="sm:fixed sm:top-0 sm:right-0 p-6 text-end">
                     {auth.user ? (
