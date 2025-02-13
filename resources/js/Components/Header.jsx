@@ -1,5 +1,7 @@
 import Headroom from "headroom.js";
 import { useEffect, useRef } from "react";
+import styles from "./Header.module.css";
+import Logo from '../../assets/images/logos/home.png';
 
 export default function Header() {
     const headerRef = useRef(null);
@@ -26,21 +28,24 @@ export default function Header() {
     ];
 
     return (
-        <header ref={headerRef} className="fixed top-0 left-0 w-full transition-all duration-300 ease-in-out z-50">
+        <header ref={headerRef} className="fixed bg-white shadow-lg top-0 left-0 w-full transition-all duration-300 ease-in-out z-50">
             <div className="container mx-auto flex justify-between items-center p-4">
-                <a href="/" className="text-2xl font-bold text-blue-600">
-                    LOGO
+                <a href="/" className="text-2xl font-bold text-blue-500">
+                    <img src={Logo} className={styles.logo} alt="Logo Home Inspections" title="Logo Home Inspections" />
                 </a>
-                <nav>
+                <nav className="flex space-x-6 items-center">
                     <ul className="flex space-x-6">
                         {links.map((link, index) => (
                             <li key={index}>
-                                <a href={link.url} className="text-gray-700 hover:text-blue-500 transition">
+                                <a href={link.url} className="text-primary font-bold hover:text-secondary transition">
                                     {link.title}
                                 </a>
                             </li>
                         ))}
                     </ul>
+                    <button className="bg-secondary hover:bg-primary transition text-white font-semibold py-2 px-6 rounded-full shadow-lg">
+                        SERVICES
+                    </button>
                 </nav>
             </div>
         </header>

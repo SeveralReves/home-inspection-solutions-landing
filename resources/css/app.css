@@ -24,3 +24,18 @@
 .headroom-unpinned {
     transform: translateY(-100%);
 }
+
+:root {
+    --primary-color: #084363;
+    --secondary-color: #0189d6;
+    --terciary-color: #5fb7e4;
+    --palid-color: #8bb2b2;
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    --black: #000;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
