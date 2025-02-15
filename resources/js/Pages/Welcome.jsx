@@ -3,6 +3,9 @@ import Header from '../Components/Header';
 import Hero from '../Components/Hero';
 import AboutUs from '../Components/AboutUs';
 import Footer from '../Components/Footer';
+import GoogleReviews from '../Components/GoogleReviews';
+import Faq from '../Components/Faq';
+import Contact from '../Components/Contact';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
@@ -11,6 +14,9 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             <Header />
             <Hero />
             <AboutUs />
+            <GoogleReviews />
+            <Faq />
+            <Contact />
             <Footer />
 
             <style>{`

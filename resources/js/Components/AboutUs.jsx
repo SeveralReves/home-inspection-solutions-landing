@@ -7,7 +7,7 @@ export default function AboutUs() {
         >
             <div className="container--small flex flex-col items-center">
                 <div className="max-w-md bg-white m-auto">
-                    <h3 className="text-3xl font-bold text-primary"  data-aos="fade-up">
+                    <h3 className="text-3xl font-bold text-primary" data-aos="fade-up">
                         ABOUT <span className="text-secondary">US</span>
                     </h3>
                     <div className="w-12 h-1 bg-secondary mx-auto mt-2"  data-aos="fade-up"></div>
