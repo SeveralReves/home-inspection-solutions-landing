@@ -24,7 +24,8 @@ export default function FAQ() {
     };
 
     return (
-        <section className="container mx-auto px-4 py-10 bg-white ">
+        <section className="bg-white">
+        <div className="container mx-auto px-4 py-10">
             <div className="max-w-3xl mx-auto my-10 p-6 bg-white rounded-3xl shadow-lg" data-aos="fade-up">
                 <h2 className="text-3xl font-bold text-center text-primary mb-6" data-aos="fade-up">
                     Frequently Asked Questions
@@ -56,6 +57,7 @@ export default function FAQ() {
                     ))}
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     );
 }
