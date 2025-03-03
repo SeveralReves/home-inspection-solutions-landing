@@ -4,7 +4,8 @@ import styles from "./Hero.module.css";
 
 export default function Hero() {
     return (
-        <section className={`${styles.hero} container flex items-center`}>
+        <section className={`${styles.hero} `}>
+            <div className={`${styles.heroContainer} max-w-6xl mx-auto flex items-center`}>
             <div className="max-w-md  bg-white rounded-3xl shadow-lg p-8 " data-aos="fade-up">
                 <h2 className="text-3xl font-bold text-primary"  data-aos="fade-up" data-aos-delay="300">
                     LOREM IPSUM <span className="text-secondary"  data-aos="fade-up" data-aos-delay="600">IS</span>
@@ -31,6 +32,7 @@ export default function Hero() {
             </div>
             <img src={bg} className={styles.backgroundImage} alt="background"  data-aos="fade-up" data-aos-delay="1500" />
             <img src={image} alt="Handyman 1" className={styles.imageAb}  data-aos="fade-up" data-aos-delay="1500" />
+            </div>
         </section>
     );
 }

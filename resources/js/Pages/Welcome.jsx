@@ -6,6 +6,8 @@ import Footer from '../Components/Footer';
 import GoogleReviews from '../Components/GoogleReviews';
 import Faq from '../Components/Faq';
 import Contact from '../Components/Contact';
+import HandymanServices from '../Components/HandymanServices';
+import InspectionServices from '../Components/InspectionServices';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
@@ -14,6 +16,8 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             <Header />
             <Hero />
             <AboutUs />
+            <HandymanServices />
+            <InspectionServices />
             <GoogleReviews />
             <Faq />
             <Contact />

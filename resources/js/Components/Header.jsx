@@ -29,7 +29,7 @@ export default function Header() {
 
     return (
         <header ref={headerRef} className="fixed bg-white shadow-lg top-0 left-0 w-full transition-all duration-300 ease-in-out z-50">
-            <div className="container mx-auto flex justify-between items-center p-4">
+            <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
                 <a href="/" className="text-2xl font-bold text-blue-500">
                     <img src={Logo} className={styles.logo} alt="Logo Home Inspections" title="Logo Home Inspections" />
                 </a>
