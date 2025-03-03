@@ -1,7 +1,7 @@
 import { ShieldCheck, Home, Factory, Search, Car } from "lucide-react";
 import HomeImage from "../../assets/images/sections/Home.jpeg";
 import Enterprise from "../../assets/images/sections/Enterprise.jpg";
-import Vehicle from "../../assets/images/sections/vehicle.jpg";
+// import Vehicle from "../../assets/images/sections/vehicle.jpg";
 import Safety from "../../assets/images/sections/Safety.jpeg";
 import Enviroment from "../../assets/images/sections/enviroment.jpg";
 
@@ -26,12 +26,6 @@ const services = [
       icon: <ShieldCheck className="text-red-500 w-12 h-12" />,
     },
     {
-      title: "Vehicle Inspection",
-      description: "Comprehensive vehicle checks for mechanical, electrical, and emission standards.",
-      img: Vehicle, // Mecánico revisando carro
-      icon: <Car className="text-yellow-500 w-12 h-12" />,
-    },
-    {
       title: "Environmental Inspection",
       description: "Assessment of environmental risks, contamination, and sustainability compliance.",
       img: Enviroment, // Medio ambiente
@@ -42,7 +36,7 @@ const services = [
 
 export default function InspectionServices() {
   return (
-    <div className="max-w-6xl mx-auto my-12 px-6">
+    <div className="max-w-6xl mx-auto my-32 px-6">
       <h2 className="text-4xl font-bold text-gray-800 text-center">Inspection Services</h2>
       <div className="h-1 w-16 bg-blue-500 mx-auto my-4"></div>
       <p className="text-center text-gray-600 mb-10">

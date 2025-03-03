@@ -1,4 +1,4 @@
-import image from "../../assets/images/sections/about.png";
+import image from "../../assets/images/sections/about.avif";
 
 export default function AboutUs() {
     return (

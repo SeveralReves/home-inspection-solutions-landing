@@ -17,18 +17,18 @@ export default function Footer() {
 
     const contactLinks = [
         {
-            url: "mailto:info@homeinspections.com",
-            title: "info@homeinspections.com",
+            url: "mailto:hinspectionsolutions@gmail.com",
+            title: "hinspectionsolutions@gmail.com",
             icon: <Mail className="w-4 h-4 text-white" />
         },
         {
-            url: "tel:+1234567890",
-            title: "+1 (234) 567-890",
+            url: "tel:+12296604209",
+            title: "(229) 660 4209",
             icon: <Phone className="w-4 h-4 text-white" />
         },
         {
             url: "https://maps.google.com/?q=123+Main+St,+City,+State",
-            title: "123 Main St, City, State",
+            title: "3894 Stratford Cir, Valdosta, GA 31605, United States",
             icon: <MapPin className="w-4 h-4 text-white" />
         },
     ];
@@ -69,7 +69,7 @@ export default function Footer() {
                     <h3 className="text-xl font-bold">Contact Us</h3>
                     <ul className="flex flex-wrap flex-col gap-4">
                         {contactLinks.map((link, index) => (
-                            <li key={index} className="flex items-center gap-2">
+                            <li key={index} className="flex items-center gap-2 max-w-64">
                                 <a href={link.url} className="flex items-center gap-2 text-sm hover:text-terciary transition">
                                     {link.icon}
                                     {link.title}

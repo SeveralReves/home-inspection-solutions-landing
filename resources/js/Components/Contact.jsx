@@ -155,19 +155,19 @@ export default function Contact() {
                     </form>
 
                     {/* Información de contacto */}
-                    <div className="text-gray-700 hover:text-secondary flex flex-col gap-4">
-                        <a href="mailto:hinspectionsolutions@gmail.com" target="_blank" rel="noopener noreferrer" className="flex gap-2">
+                    <div className="text-gray-700 flex flex-col gap-4">
+                        <a href="mailto:hinspectionsolutions@gmail.com" target="_blank" rel="noopener noreferrer" className="flex gap-2 hover:text-secondary">
                             <Mail className="text-secondary" />
                             <span className="flex-1">hinspectionsolutions@gmail.com</span>
                         </a>
-                        <p className="flex gap-2">
+                        <a href="tel:+12296604209" target="_blank" rel="noopener noreferrer" className="flex gap-2  hover:text-secondary">
                             <Phone className="text-secondary" />
                             <span className="flex-1">(229) 660 4209</span>
-                        </p>
-                        <p className="flex gap-2">
+                        </a>
+                        <address className="flex gap-2 hover:text-secondary">
                             <MapPin className="text-secondary" />
-                            <span className="flex-1">3894 Stratford Cir, Valdosta, GA 31605, Estados Unidos</span>
-                        </p>
+                            <span className="flex-1">3894 Stratford Cir, Valdosta, GA 31605, United States</span>
+                        </address>
                     </div>
                 </div>
             </div>

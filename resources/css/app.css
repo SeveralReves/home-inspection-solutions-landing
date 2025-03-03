@@ -43,3 +43,11 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
+
+.slick-slider .slick-dots{
+    bottom: 30px;
+}
+
+.slick-slide > div {
+    display: flex;
+}
