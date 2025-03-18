@@ -1,13 +1,33 @@
-import { Wrench, Hammer, PaintRoller, Plug, Droplet } from "lucide-react";
+import {
+    Wrench,
+    Hammer,
+    PaintRoller,
+    Plug,
+    Droplet,
+    Home,
+    Trash2,
+    Shield,
+    Tv,
+    Layers,
+    DoorOpen
+  } from "lucide-react";
+
 import Plumbing from "../../assets/images/sections/Plumbing.jpg";
 import Electrical from "../../assets/images/sections/Electrical.jpg";
 import Painting from "../../assets/images/sections/Painting.jpg";
 import Carpentry from "../../assets/images/sections/Carpentry.jpg";
 import Repairs from "../../assets/images/sections/Repairs.jpg";
+import Remodeling from "../../assets/images/sections/remodeling.jpg";
+import JunkRemoval from "../../assets/images/sections/junkremoval.jpg";
+import FenceRepairs from "../../assets/images/sections/fencerepairs.jpg";
+import ApplianceInstallation from "../../assets/images/sections/applianceinstallation.jpg";
+import SidingRepairs from "../../assets/images/sections/sidingrepairs.jpg";
+import DoorsWindows from "../../assets/images/sections/doorswindows.jpg";
+
 
 const services = [
     {
-      title: "Plumbing Repairs",
+      title: "Small Plumbing Repairs",
       description: "Fixing leaks, pipe replacements, and plumbing maintenance.",
       img: Plumbing,
       icon: <Droplet className="text-blue-500 w-10 h-10" />,
@@ -36,7 +56,44 @@ const services = [
       img: Repairs,
       icon: <Wrench className="text-gray-500 w-10 h-10" />,
     },
-  ];
+    {
+      title: "Remodeling",
+      description: "Complete home and office remodeling services.",
+      img: Remodeling,
+      icon: <Home className="text-orange-500 w-10 h-10" />,
+    },
+    {
+      title: "Junk Removal",
+      description: "Efficient removal of unwanted items and debris.",
+      img: JunkRemoval,
+      icon: <Trash2 className="text-red-500 w-10 h-10" />,
+    },
+    {
+      title: "Fence Repairs",
+      description: "Fixing and maintaining fences for homes and businesses.",
+      img: FenceRepairs,
+      icon: <Shield className="text-green-600 w-10 h-10" />,
+    },
+    {
+      title: "Appliance Installation & Removal",
+      description: "Installing and removing household appliances safely.",
+      img: ApplianceInstallation,
+      icon: <Tv className="text-blue-700 w-10 h-10" />,
+    },
+    {
+      title: "Siding Repairs",
+      description: "Repair and maintenance of house siding.",
+      img: SidingRepairs,
+      icon: <Layers className="text-gray-700 w-10 h-10" />,
+    },
+    {
+      title: "Doors & Windows Installation",
+      description: "Installation of doors and windows for better security and aesthetics.",
+      img: DoorsWindows,
+      icon: <DoorOpen className="text-indigo-500 w-10 h-10" />,
+    },
+];
+
 
 
 export default function HandymanServices() {

@@ -13,24 +13,6 @@ const services = [
       img: HomeImage, // Imagen fija de casa
       icon: <Home className="text-blue-500 w-12 h-12" />,
     },
-    {
-      title: "Commercial Inspection",
-      description: "Detailed analysis of commercial properties for safety and compliance.",
-      img: Enterprise, // Edificio de oficinas
-      icon: <Factory className="text-green-500 w-12 h-12" />,
-    },
-    {
-      title: "Safety Inspections",
-      description: "Ensure buildings and workplaces meet safety regulations and standards.",
-      img: Safety, // Seguridad industrial
-      icon: <ShieldCheck className="text-red-500 w-12 h-12" />,
-    },
-    {
-      title: "Environmental Inspection",
-      description: "Assessment of environmental risks, contamination, and sustainability compliance.",
-      img: Enviroment, // Medio ambiente
-      icon: <Search className="text-purple-500 w-12 h-12" />,
-    },
   ];
 
 
@@ -43,7 +25,7 @@ export default function InspectionServices() {
         Professional inspection services to ensure safety and compliance.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 gap-8">
         {services.map((service, index) => (
           <div key={index} className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
             <img src={service.img} alt={service.title} className="w-full md:w-1/3 h-56 object-cover" />
