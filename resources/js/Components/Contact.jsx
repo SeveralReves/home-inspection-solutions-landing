@@ -99,16 +99,48 @@ export default function Contact() {
         }
     };
 
+    const services = [
+        {
+          title: "Small Plumbing Repairs",
+        },
+        {
+          title: "Electrical Services",
+        },
+        {
+          title: "Painting & Finishing",
+        },
+        {
+          title: "Carpentry & Woodwork",
+        },
+        {
+          title: "General Repairs",
+        },
+        {
+          title: "Remodeling",
+        },
+        {
+          title: "Junk Removal",
+        },
+        {
+          title: "Fence Repairs",
+        },
+        {
+          title: "Appliance Installation & Removal",
+        },
+        {
+          title: "Siding Repairs",
+        },
+        {
+          title: "Doors & Windows Installation",
+        },
+      ];
+
+
     return (
         <div id="contact" className="max-w-6xl mx-auto my-10 bg-white rounded-3xl shadow-lg flex flex-col md:flex-row gap-6">
             {/* Mapa */}
             <div className="w-full md:w-2/5">
-                <iframe
-                    className="w-full h-72 md:h-full rounded-3xl"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093743!2d-122.41941548468155!3d37.77492977975921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c8b6dfefb%3A0xf5442b8c3f5f10!2sSan%20Francisco!5e0!3m2!1sen!2sus!4v1617733747794!5m2!1sen!2sus"
-                    allowFullScreen=""
-                    loading="lazy"
-                ></iframe>
+                <iframe className="w-full h-72 md:h-full rounded-3xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.5608243726833!2d-83.2462653249547!3d30.926897676223916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88ee429896e3e7dd%3A0x7c83f9d4c041ba49!2s3894%20Stratford%20Cir%2C%20Valdosta%2C%20GA%2031605%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sve!4v1742373702290!5m2!1ses-419!2sve" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             {/* Formulario de contacto */}
@@ -163,9 +195,12 @@ export default function Contact() {
                                 className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                             >
                                 <option value="">Select a service</option>
-                                <option value="Handyman">Handyman</option>
-                                <option value="Inspection">Inspection</option>
-                                <option value="Maintenance">Maintenance</option>
+                                {services.map((service, index) => (
+                                    <option key={index} value={service.title}>{service.title}</option>
+                                ))}
+                                <option value="Inspection">Inspections</option>
+                                {/* <option value="Handyman">Handyman</option>
+                                <option value="Maintenance">Maintenance</option> */}
                             </select>
                             {errors.serviceType && <p className="text-red-500 text-sm">{errors.serviceType}</p>}
                         </div>
