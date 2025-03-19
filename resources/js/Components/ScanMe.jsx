@@ -5,7 +5,7 @@ export default function ScanMe() {
   return (
     <section className="py-6 bg-gray-100 text-center relative bg-white shadow-lg ">
       {/* Banner con QR y mensaje */}
-      <div className=" p-4 flex items-center justify-between flex-col md:flex-row-reverse gap-6 max-w-6xl mx-auto mt-6 ">
+      <div className=" p-4 flex items-center justify-between flex-col-reverse md:flex-row gap-6 max-w-6xl mx-auto mt-6 ">
         {/* Sección de texto */}
         <div className="flex items-center justify-center gap-2 py-9 px-4 bg-secondary text-white rounded-lg md:w-1/3">
           <Languages className="w-6 h-6 text-primary" />

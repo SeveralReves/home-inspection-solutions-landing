@@ -1,4 +1,6 @@
 import { useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Mail, Phone, MapPin } from "lucide-react";
 
@@ -63,13 +65,37 @@ export default function Contact() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (validate()) {
-            alert("Message sent successfully!");
+        if (!validate()) return;
+
+        try {
+            const response = await axios.post("/api/contact", {
+                ...form,
+                captcha: captchaValue,
+            });
+
+            Swal.fire({
+                icon: "success",
+                title: "Message Sent!",
+                text: "We will get back to you soon.",
+                customClass: {
+                    confirmButton: "my-swal-button"
+                }
+            });
+
             setForm({ name: "", email: "", phone: "", serviceType: "", message: "" });
             setCaptchaValue(null);
             setErrors({});
+        } catch (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: error.response?.data?.message || "Something went wrong, please try again.",
+                customClass: {
+                    confirmButton: "my-swal-button"
+                }
+            });
         }
     };
 
@@ -163,7 +189,7 @@ export default function Contact() {
                             />
                         </div>
                         {errors.captcha && <p className="text-red-500 text-sm text-center">{errors.captcha}</p>}
-
+                        <small>By submitting this form, you agree to our <a href="/privacy-policy" className="text-primary font-bold">Privacy Policy</a>.</small>
                         <button className="w-full bg-secondary hover:bg-primary transition duration-300 text-white p-3 rounded-full font-semibold">
                             SUBMIT
                         </button>

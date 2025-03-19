@@ -31,6 +31,7 @@ export default function Header() {
     ];
 
     return (
+        <>
         <header
             ref={headerRef}
             className="fixed bg-white shadow-lg top-0 left-0 w-full transition-all duration-300 ease-in-out z-50"
@@ -78,10 +79,12 @@ export default function Header() {
             </div>
 
             {/* Menú Mobile */}
+        </header>
             <div
                 className={`md:hidden fixed top-0 left-0 w-full h-full bg-white shadow-lg transform ${
                     menuOpen ? "translate-x-0" : "-translate-x-full"
-                } transition-transform duration-300 ease-in-out z-40`}
+                } transition-transform duration-300 ease-in-out`}
+                style={{ zIndex: 100 }}
             >
                 <div className="flex justify-between items-center p-4">
                     <a href="/" className="text-2xl font-bold text-blue-500">
@@ -122,6 +125,6 @@ export default function Header() {
                     </li>
                 </ul>
             </div>
-        </header>
+            </>
     );
 }

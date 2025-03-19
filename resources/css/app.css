@@ -63,3 +63,14 @@ html{
 .gallery{
     width: 80vw;
 }
+
+.my-swal-button {
+    background-color: #084363 !important; /* Cambia el color del botón */
+    color: white !important; /* Color del texto */
+    border-radius: 8px !important; /* Bordes redondeados */
+    padding: 10px 20px !important; /* Espaciado */
+}
+
+.my-swal-button:hover {
+    background-color: #0189d6 !important; /* Color al pasar el mouse */
+}

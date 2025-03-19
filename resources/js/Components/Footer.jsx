@@ -3,11 +3,11 @@ import Logo from "../../assets/images/logos/home_4.png";
 
 export default function Footer() {
     const links = [
-        { url: "#", title: "Home" },
-        { url: "#", title: "About Us" },
-        { url: "#", title: "Contact Us" },
+        { url: "#home", title: "Home" },
+        { url: "#handyman", title: "Handyman" },
+        { url: "#inspections", title: "Inspections" },
+        { url: "#about", title: "About Us" },
     ];
-
     const socialLinks = [
         { url: "#", icon: <Facebook className="w-4 h-4 hover:text-secondary transition" /> },
         { url: "#", icon: <Twitter className="w-4 h-4 hover:text-secondary transition" /> },

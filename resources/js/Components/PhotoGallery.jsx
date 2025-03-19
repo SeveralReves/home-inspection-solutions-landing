@@ -55,7 +55,7 @@ export default function PhotoGallery() {
 
   return (
     <section className="py-10 bg-gray-100 text-center">
-      <h2 className="text-4xl font-bold text-gray-800">Galería de Trabajos</h2>
+      <h2 className="text-4xl font-bold text-gray-800">Gallery</h2>
       <div className="h-1 w-16 bg-blue-500 mx-auto my-4"></div>
 
       {/* Carrusel de imágenes */}
