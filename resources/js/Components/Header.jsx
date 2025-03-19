@@ -22,9 +22,10 @@ export default function Header() {
     }, []);
 
     const links = [
-        { url: '#', title: 'Home' },
-        { url: '#', title: 'About Us' },
-        { url: '#', title: 'Contact Us' },
+        { url: '#home', title: 'Home' },
+        { url: '#handyman', title: 'Handyman' },
+        { url: '#inspections', title: 'Inspections' },
+        { url: '#about', title: 'About Us' },
     ];
 
     return (
@@ -43,9 +44,9 @@ export default function Header() {
                             </li>
                         ))}
                     </ul>
-                    <button className="bg-secondary hover:bg-primary transition duration-300 ease-in-out text-white font-semibold py-2 px-6 rounded-full shadow-lg">
-                        SERVICES
-                    </button>
+                    <a href="#contact" className="bg-secondary hover:bg-primary transition duration-300 ease-in-out text-white font-semibold py-2 px-6 rounded-full shadow-lg">
+                        Contact Us
+                    </a>
                 </nav>
             </div>
         </header>

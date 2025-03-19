@@ -2,12 +2,12 @@ import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Mail, Phone, MapPin } from "lucide-react";
 
-// 6LckSegqAAAAAB9YE0esynHV1UK2VXDjn8tF4ovf secret key
 export default function Contact() {
     const [form, setForm] = useState({
         name: "",
         email: "",
         phone: "",
+        serviceType: "", // Nuevo campo para el tipo de servicio
         message: "",
     });
 
@@ -28,7 +28,7 @@ export default function Contact() {
         } else if (!/^\d{10,15}$/.test(form.phone)) {
             newErrors.phone = "Invalid phone number.";
         }
-        // if (!form.message.trim()) newErrors.message = "Message is required.";
+        if (!form.serviceType.trim()) newErrors.serviceType = "Please select a service type."; // Validación del select
         if (!captchaValue) newErrors.captcha = "Please verify reCAPTCHA.";
 
         setErrors(newErrors);
@@ -38,7 +38,6 @@ export default function Contact() {
     const handleChange = (e) => {
         setForm((prevForm) => {
             const updatedForm = { ...prevForm, [e.target.name]: e.target.value };
-            // Validación en tiempo real
             validateField(e.target.name, updatedForm);
             return updatedForm;
         });
@@ -68,14 +67,14 @@ export default function Contact() {
         e.preventDefault();
         if (validate()) {
             alert("Message sent successfully!");
-            setForm({ name: "", email: "", phone: "", message: "" });
+            setForm({ name: "", email: "", phone: "", serviceType: "", message: "" });
             setCaptchaValue(null);
             setErrors({});
         }
     };
 
     return (
-        <div className="max-w-6xl mx-auto my-10 bg-white rounded-3xl shadow-lg flex flex-col md:flex-row gap-6">
+        <div id="contact" className="max-w-6xl mx-auto my-10 bg-white rounded-3xl shadow-lg flex flex-col md:flex-row gap-6">
             {/* Mapa */}
             <div className="w-full md:w-2/5">
                 <iframe
@@ -127,6 +126,22 @@ export default function Contact() {
                                 className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                             />
                             {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+                        </div>
+
+                        {/* Select para el tipo de servicio */}
+                        <div>
+                            <select
+                                name="serviceType"
+                                value={form.serviceType}
+                                onChange={handleChange}
+                                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                            >
+                                <option value="">Select a service</option>
+                                <option value="Handyman">Handyman</option>
+                                <option value="Inspection">Inspection</option>
+                                <option value="Maintenance">Maintenance</option>
+                            </select>
+                            {errors.serviceType && <p className="text-red-500 text-sm">{errors.serviceType}</p>}
                         </div>
 
                         <div>

@@ -98,7 +98,7 @@ const services = [
 
 export default function HandymanServices() {
   return (
-    <div className="max-w-6xl mx-auto my-12 px-6">
+    <div id="handyman" className="max-w-6xl mx-auto my-12 px-6">
       <h2 className="text-4xl font-bold text-gray-800 text-center">Handyman Services</h2>
       <div className="h-1 w-16 bg-blue-500 mx-auto my-4"></div>
       <p className="text-center text-gray-600 mb-10">

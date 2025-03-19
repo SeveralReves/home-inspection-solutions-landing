@@ -4,10 +4,13 @@ import Hero from '../Components/Hero';
 import AboutUs from '../Components/AboutUs';
 import Footer from '../Components/Footer';
 import GoogleReviews from '../Components/GoogleReviews';
+import GoogleReviews2 from '../Components/GoogleReviews2';
 import Faq from '../Components/Faq';
 import Contact from '../Components/Contact';
 import HandymanServices from '../Components/HandymanServices';
 import InspectionServices from '../Components/InspectionServices';
+import CertificatesBanner from '../Components/Certificates.jsx';
+import PhotoGallery from '../Components/PhotoGallery.jsx';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
@@ -15,10 +18,13 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             <Head />
             <Header />
             <Hero />
-            <AboutUs />
-            <HandymanServices />
-            <InspectionServices />
             <GoogleReviews />
+            <HandymanServices />
+            <CertificatesBanner />
+            <InspectionServices />
+            <AboutUs />
+            <PhotoGallery />
+            <GoogleReviews2 />
             <Faq />
             <Contact />
             <Footer />

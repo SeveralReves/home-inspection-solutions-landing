@@ -51,3 +51,7 @@ body {
 .slick-slide > div {
     display: flex;
 }
+
+html{
+    scroll-behavior: smooth;
+}

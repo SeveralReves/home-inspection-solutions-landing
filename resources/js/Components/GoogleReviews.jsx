@@ -49,34 +49,7 @@ export default function GoogleReviews() {
             time: 1733502118,
             translated: false,
         },
-        {
-            author_name: "Francisco Pastor",
-            author_url:
-                "https://www.google.com/maps/contrib/111262485563833853540/reviews",
-            language: "en",
-            original_language: "en",
-            profile_photo_url:
-                "https://lh3.googleusercontent.com/a/ACg8ocJld7ecntgOLNrrLPLJJmaN3-inBMqPX6HHpVkRKI9v0xgumA=s128-c0x00000000-cc-rp-mo",
-            rating: 5,
-            relative_time_description: "2 weeks ago",
-            text: "I was looking for a handyman that can take care of minor  repairs around my home and  called home handyman solutions and Enrique did an excellent work. Great communication, price was according with the quality provided . For your home repair needs give them a call",
-            time: 1738016172,
-            translated: false,
-        },
-        {
-            author_name: "Jesmaly Vasquez",
-            author_url:
-                "https://www.google.com/maps/contrib/117731565107711709805/reviews",
-            language: "en",
-            original_language: "en",
-            profile_photo_url:
-                "https://lh3.googleusercontent.com/a-/ALV-UjVTl1-wcetDtnGG3OH7peINdTFKOJhEveIgJZ8AnVlQ5G4ab1SZ=s128-c0x00000000-cc-rp-mo",
-            rating: 5,
-            relative_time_description: "3 months ago",
-            text: "Mr. Enrique was kind, patient, and professional, he clarified my doubt and explained everything that I asked him. I recommend his company 100%.",
-            time: 1730162938,
-            translated: false,
-        },
+
     ];
 
     useEffect(() => {
@@ -103,9 +76,6 @@ export default function GoogleReviews() {
 
     return (
         <section className="container mx-auto px-4 py-20">
-            <h2 className="text-3xl font-bold text-gray-800 text-center mb-6"  data-aos="fade-up">
-                Customer Reviews
-            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {reviews.length > 0 ? (

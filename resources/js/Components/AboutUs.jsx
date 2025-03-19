@@ -3,6 +3,7 @@ import image from "../../assets/images/sections/about.avif";
 export default function AboutUs() {
     return (
         <section
+            id="about"
             className={`w-full transition-all duration-300 ease-in-out z-50 text-black py-10 bg-white shadow-lg`}
         >
             <div className="container--small flex flex-col items-center">
