@@ -90,7 +90,7 @@ export default function Contact() {
                 <h2 className="text-3xl font-bold text-gray-800">CONTACT US</h2>
                 <div className="h-1 w-12 bg-primary my-3"></div>
 
-                <div className="flex gap-5">
+                <div className="flex gap-5 flex-col md:flex-row">
                     <form onSubmit={handleSubmit} className="space-y-4 w-full">
                         <div>
                             <input

@@ -11,6 +11,9 @@
     object-fit: cover;
     object-position: center;
     display: flex !important;
+    @media screen and (max-width: 768px){
+        height: 100vh;
+    }
 }
 
 .hero{

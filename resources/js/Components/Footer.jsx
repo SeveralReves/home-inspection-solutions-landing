@@ -51,7 +51,7 @@ export default function Footer() {
                 </div>
 
                 {/* Enlaces de navegación */}
-                <nav className="ml-auto flex flex-wrap flex-col gap-5">
+                <nav className="md:ml-auto flex flex-wrap flex-col gap-5">
                     <h3 className="text-xl font-bold">Links</h3>
                     <ul className="flex flex-wrap flex-col gap-4">
                         {links.map((link, index) => (

@@ -44,7 +44,7 @@ body {
     color: var(--text-color);
 }
 
-.slick-slider .slick-dots{
+#home .slick-slider .slick-dots{
     bottom: 30px;
 }
 
@@ -54,4 +54,12 @@ body {
 
 html{
     scroll-behavior: smooth;
+}
+
+.gallery .slick-prev:before, .gallery .slick-next:before{
+    color: #084363;
+    font-size: 30px;
+}
+.gallery{
+    width: 80vw;
 }

@@ -10,12 +10,24 @@ import before1 from "../../assets/images/gallery/Before-1.avif";
 import after1 from "../../assets/images/gallery/After-1.avif";
 import before2 from "../../assets/images/gallery/Before-2.avif";
 import after2 from "../../assets/images/gallery/After-2.avif";
+import before3 from "../../assets/images/gallery/Before-3.avif";
+import after3 from "../../assets/images/gallery/After-3.avif";
+import before4 from "../../assets/images/gallery/Before-4.avif";
+import after4 from "../../assets/images/gallery/After-4.avif";
+import before5 from "../../assets/images/gallery/Before-5.avif";
+import after5 from "../../assets/images/gallery/After-5.avif";
+import before6 from "../../assets/images/gallery/Before-6.avif";
+import after6 from "../../assets/images/gallery/After-6.avif";
 
 import styles from "./PhotoGallery.module.css";
 
 const images = [
   { before: before1, after: after1 },
   { before: before2, after: after2 },
+  { before: before3, after: after3 },
+  { before: before4, after: after4 },
+  { before: before5, after: after5 },
+  { before: before6, after: after6 },
 ];
 
 export default function PhotoGallery() {
@@ -42,12 +54,12 @@ export default function PhotoGallery() {
   };
 
   return (
-    <section className="py-6 bg-gray-100 text-center">
+    <section className="py-10 bg-gray-100 text-center">
       <h2 className="text-4xl font-bold text-gray-800">Galería de Trabajos</h2>
       <div className="h-1 w-16 bg-blue-500 mx-auto my-4"></div>
 
       {/* Carrusel de imágenes */}
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto mt-8 gallery">
         <Slider {...settings}>
           {images.map((img, index) => (
             <div key={index} className="px-2">

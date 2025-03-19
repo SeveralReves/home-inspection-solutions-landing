@@ -1,9 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
-import image1 from "../../assets/images/hero/Hero-1.avif";
-import image2 from "../../assets/images/hero/Hero-2.avif";
-import image3 from "../../assets/images/hero/Hero-3.avif";
-import image4 from "../../assets/images/hero/Hero-4.avif";
+import image1 from "../../assets/images/hero/Hero-5.avif";
+import image2 from "../../assets/images/hero/Hero-6.avif";
+import image3 from "../../assets/images/hero/Hero-7.avif";
+import image4 from "../../assets/images/hero/Hero-8.avif";
 import styles from "./Hero.module.css";
 
 // Importar el estilo de slick-carousel
@@ -71,7 +71,7 @@ export default function Hero() {
                                     {
                                         // Imagen
                                         slider.title || slider.subtitle || slider.button_primary || slider.button_secondary ? (
-                                            <div className="max-w-md bg-white rounded-3xl shadow-lg p-8 mt-10" data-aos="fade-up">
+                                            <div className="max-w-md bg-white rounded-3xl shadow-lg p-8 mt-10 mx-3" data-aos="fade-up">
                                             {
                                                 // Título
                                                 slider.title && (
