@@ -123,6 +123,7 @@ export default function GoogleReviews() {
                                 {[...Array(5)].map((_, i) => (
                                     <Star
                                         key={i}
+                                        fill={i < review.rating ? "currentColor" : "none"}
                                         className={`w-5 h-5 ${
                                             i < review.rating
                                                 ? "text-yellow-400"

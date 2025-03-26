@@ -22,10 +22,10 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             <Hero />
             <GoogleReviews />
             <HandymanServices />
+            <PhotoGallery />
             <CertificatesBanner />
             <InspectionServices />
             <AboutUs />
-            <PhotoGallery />
             <GoogleReviews2 />
             <Faq />
             <Contact />

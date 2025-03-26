@@ -18,14 +18,14 @@ import {
 import Plumbing from "../../assets/images/sections/Plumbing.jpg";
 import Electrical from "../../assets/images/sections/Electrical.jpg";
 import Painting from "../../assets/images/sections/Painting.jpg";
-import Carpentry from "../../assets/images/sections/Carpentry.jpg";
-import Repairs from "../../assets/images/sections/Repairs.jpg";
+import Carpentry from "../../assets/images/sections/Carpentry-2.jpg";
+import Repairs from "../../assets/images/sections/Repairs-2.jpg";
 import Remodeling from "../../assets/images/sections/remodeling.jpg";
 import JunkRemoval from "../../assets/images/sections/junkremoval.jpg";
-import FenceRepairs from "../../assets/images/sections/fencerepairs.jpg";
-import ApplianceInstallation from "../../assets/images/sections/applianceinstallation.jpg";
+import FenceRepairs from "../../assets/images/sections/fencerepairs-2.webp";
+import ApplianceInstallation from "../../assets/images/sections/applianceinstallation-2.jpg";
 import SidingRepairs from "../../assets/images/sections/sidingrepairs.jpg";
-import DoorsWindows from "../../assets/images/sections/doorswindows.jpg";
+import DoorsWindows from "../../assets/images/sections/doorswindows-2.jpg";
 
 const services = [
   {

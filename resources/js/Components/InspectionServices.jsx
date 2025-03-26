@@ -1,22 +1,26 @@
-import { ShieldCheck, Home, Factory, Search, Car } from "lucide-react";
-import HomeImage from "../../assets/images/sections/Home.jpeg";
-import Enterprise from "../../assets/images/sections/Enterprise.jpg";
-// import Vehicle from "../../assets/images/sections/vehicle.jpg";
-import Safety from "../../assets/images/sections/Safety.jpeg";
-import Enviroment from "../../assets/images/sections/enviroment.jpg";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Home } from "lucide-react";
+import image1 from "../../assets/images/sections/Inspections-3-3.jpg";
+import image2 from "../../assets/images/sections/Inspections-2-2.jpg";
+import image3 from "../../assets/images/sections/Inspections-1-1.jpg";
 
-
-const services = [
-    {
-      title: "Home Inspection",
-      description: "Comprehensive evaluation of the structure, electrical, plumbing, and HVAC systems.",
-      img: HomeImage, // Imagen fija de casa
-      icon: <Home className="text-blue-500 w-12 h-12" />,
-    },
-  ];
-
+const images = [image1, image2, image3];
 
 export default function InspectionServices() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    fade: true,
+    cssEase: "linear",
+  };
+
   return (
     <div id="inspections" className="max-w-6xl mx-auto my-32 px-6">
       <h2 className="text-4xl font-bold text-gray-800 text-center">Inspection Services</h2>
@@ -25,19 +29,23 @@ export default function InspectionServices() {
         Professional inspection services to ensure safety and compliance.
       </p>
 
-      <div className="grid grid-cols-1 gap-8">
-        {services.map((service, index) => (
-          <div key={index} className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-            <img src={service.img} alt={service.title} className="w-full md:w-1/3 h-56 object-cover" />
-            <div className="p-6 flex flex-col justify-center w-full md:w-2/3">
-              <div className="flex items-center gap-3 mb-4">
-                {service.icon}
-                <h3 className="text-2xl font-semibold text-gray-800">{service.title}</h3>
-              </div>
-              <p className="text-gray-600">{service.description}</p>
-            </div>
+      <div className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+        <div className="w-full md:w-1/2">
+          <Slider {...settings}>
+            {images.map((img, index) => (
+              <img key={index} src={img} alt={`Slide ${index + 1}`} className="w-full h-64 object-cover" />
+            ))}
+          </Slider>
+        </div>
+        <div className="p-6 flex flex-col justify-center w-full md:w-1/2">
+          <div className="flex items-center gap-3 mb-4">
+            <Home className="text-blue-500 w-12 h-12" />
+            <h3 className="text-2xl font-semibold text-gray-800">Home Inspection</h3>
           </div>
-        ))}
+          <p className="text-gray-600">
+            Comprehensive evaluation of the structure, electrical, plumbing, and HVAC systems.
+          </p>
+        </div>
       </div>
     </div>
   );
