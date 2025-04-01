@@ -12,7 +12,7 @@ export default function Dashboard({ auth, messages }) {
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6">
+                        <div className="p-6" style={{overflow: 'scroll'}}>
                             <h3 className="text-lg font-semibold mb-4">Contacts</h3>
                             <table className="min-w-full table-auto">
                                 <thead>

@@ -112,8 +112,8 @@ export default function HandymanServices() {
     <div id="handyman" className="max-w-6xl mx-auto my-12 px-6">
       <h2 className="text-4xl font-bold text-gray-800 text-center">Handyman Services</h2>
       <div className="h-1 w-16 bg-blue-500 mx-auto my-4"></div>
-      <p className="text-center text-gray-600 mb-10">
-        Reliable and professional home improvement services.
+      <p className="max-w-3xl mx-auto text-center text-gray-600 mb-10">
+        Serving Valdosta, GA, we offer top-quality handyman services to ensure your home is safe, functional, and looking its best.  From small fixes to larger home improvement projects, trust us for expert handyman solutions.
       </p>
 
       {/* Para Desktop */}

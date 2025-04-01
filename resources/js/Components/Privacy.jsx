@@ -6,12 +6,12 @@ export default function Privcacy() {
         >
             <div className="container--small flex flex-col items-center">
                 <div className="max-w-md bg-white m-auto">
-                    <h3
+                    <h1
                         className="text-3xl font-bold text-primary"
                         data-aos="fade-up"
                     >
                         Privacy <span className="text-secondary">Policy</span>
-                    </h3>
+                    </h1>
                     <div
                         className="w-12 h-1 bg-secondary mx-auto mt-2"
                         data-aos="fade-up"

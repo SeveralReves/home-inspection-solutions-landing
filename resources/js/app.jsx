@@ -20,6 +20,7 @@ createInertiaApp({
             easing: "ease-in-out",  // Easing de la animación
             once: true,  // Solo la primera vez
         });
+        document.querySelector('meta[name="description"]').setAttribute('content', props.initialPage.props.meta_description || 'Descripción por defecto');
 
         root.render(<App {...props} />);
     },

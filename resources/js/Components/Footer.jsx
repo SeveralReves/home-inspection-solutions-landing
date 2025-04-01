@@ -52,7 +52,7 @@ export default function Footer() {
 
                 {/* Enlaces de navegación */}
                 <nav className="md:ml-auto flex flex-wrap flex-col gap-5">
-                    <h3 className="text-xl font-bold">Links</h3>
+                    <h2 className="text-xl font-bold">Links</h2>
                     <ul className="flex flex-wrap flex-col gap-4">
                         {links.map((link, index) => (
                             <li key={index}>
@@ -66,7 +66,7 @@ export default function Footer() {
 
                 {/* Enlaces de contacto */}
                 <nav className="flex flex-wrap flex-col gap-5">
-                    <h3 className="text-xl font-bold">Contact Us</h3>
+                    <h2 className="text-xl font-bold">Contact Us</h2>
                     <ul className="flex flex-wrap flex-col gap-4">
                         {contactLinks.map((link, index) => (
                             <li key={index} className="flex items-center gap-2 max-w-64">

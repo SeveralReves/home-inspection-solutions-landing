@@ -7,12 +7,20 @@ const faqs = [
         answer: "We provide handyman services and professional inspections to ensure quality and safety.",
     },
     {
-        question: "How can I book an inspection?",
-        answer: "You can book an inspection through our website or by calling our customer service.",
+        question: "What types of general home repairs do you handle?",
+        answer: "We handle a wide variety of general home repairs, including fixing leaks, repairing drywall, minor carpentry work, door adjustments, window repairs, and much more. If you have a general home maintenance task, chances are we can help!",
     },
     {
-        question: "Do you offer emergency repairs?",
-        answer: "Yes, we offer emergency repair services for urgent issues.",
+        question: "How can I get an estimate for handyman services in Valdosta?",
+        answer: "The best way to get an accurate estimate is to contact us directly. You can call us at (229) 660 4209 or fill out the contact form on our website describing the work you need. We'll get back to you promptly to discuss your project and provide a detailed estimate.",
+    },
+    {
+        question: "Can you help with electrical fixture installations?",
+        answer: "Yes, we can assist with the installation of various electrical fixtures, such as light fixtures, ceiling fans, and outlets. For major electrical work or wiring issues, we recommend consulting a qualified electrician.",
+    },
+    {
+        question: "Why should a first-time home buyer get a home inspection in Valdosta?",
+        answer: "A home inspection is crucial for first-time home buyers in Valdosta because it provides an unbiased assessment of the property's condition before you make a significant investment. It can reveal potential issues, from structural problems to minor repairs, allowing you to negotiate repairs, adjust your offer, or avoid costly surprises down the road. It offers peace of mind and helps you understand the true condition of your new home.",
     },
 ];
 

@@ -7,6 +7,7 @@ import { MessageCircle } from "lucide-react";
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
         <>
+            <Head title="Error 404" />
             <Header />
             <NotFound />
             <Footer />

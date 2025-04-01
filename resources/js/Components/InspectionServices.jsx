@@ -25,8 +25,7 @@ export default function InspectionServices() {
     <div id="inspections" className="max-w-6xl mx-auto my-32 px-6">
       <h2 className="text-4xl font-bold text-gray-800 text-center">Inspection Services</h2>
       <div className="h-1 w-16 bg-blue-500 mx-auto my-4"></div>
-      <p className="text-center text-gray-600 mb-10">
-        Professional inspection services to ensure safety and compliance.
+      <p className="max-w-3xl mx-auto text-center text-gray-600 mb-10">We focus on delivering accurate and reliable inspections to give you peace of mind and help you make informed decisions about your property in Valdosta, GA.
       </p>
 
       <div className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
@@ -43,7 +42,7 @@ export default function InspectionServices() {
             <h3 className="text-2xl font-semibold text-gray-800">Home Inspection</h3>
           </div>
           <p className="text-gray-600">
-            Comprehensive evaluation of the structure, electrical, plumbing, and HVAC systems.
+          Ensure the safety and compliance of your property with our professional inspection services in Valdosta. Whether you're buying, selling, or need a thorough assessment of your current home, our certified home inspectors provide detailed reports covering all critical aspects. 
           </p>
         </div>
       </div>
