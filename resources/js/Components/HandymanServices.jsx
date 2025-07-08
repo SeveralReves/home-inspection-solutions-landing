@@ -17,12 +17,12 @@ import {
 
 import Plumbing from "../../assets/images/sections/Plumbing.jpg";
 import Electrical from "../../assets/images/sections/Electrical.jpg";
-import Painting from "../../assets/images/sections/Painting.jpg";
+import Painting from "../../assets/images/sections/Painting-2.jpg";
 import Carpentry from "../../assets/images/sections/Carpentry-2.jpg";
 import Repairs from "../../assets/images/sections/Repairs-2.jpg";
 import Remodeling from "../../assets/images/sections/remodeling.jpg";
-import JunkRemoval from "../../assets/images/sections/junkremoval.jpg";
-import FenceRepairs from "../../assets/images/sections/fencerepairs-2.webp";
+import HouseKeeping from "../../assets/images/sections/housekeeping.jpg";
+import FenceRepairs from "../../assets/images/sections/fence.jpg";
 import ApplianceInstallation from "../../assets/images/sections/applianceinstallation-2.jpg";
 import SidingRepairs from "../../assets/images/sections/sidingrepairs.jpg";
 import DoorsWindows from "../../assets/images/sections/doorswindows-2.jpg";
@@ -42,7 +42,7 @@ const services = [
   },
   {
     title: "Painting & Finishing",
-    description: "Professional painting and wall finishing services.",
+    description: "Enhancing your home’s beauty, inside and out",
     img: Painting,
     icon: <PaintRoller className="text-green-500 w-10 h-10" />,
   },
@@ -65,9 +65,9 @@ const services = [
     icon: <Home className="text-orange-500 w-10 h-10" />,
   },
   {
-    title: "Junk Removal",
-    description: "Efficient removal of unwanted items and debris.",
-    img: JunkRemoval,
+    title: "Housekeeping and cleaning services",
+    description: "Keeping your home happy, clean and fresh",
+    img: HouseKeeping,
     icon: <Trash2 className="text-red-500 w-10 h-10" />,
   },
   {

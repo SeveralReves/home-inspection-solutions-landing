@@ -1,11 +1,11 @@
 import React from "react";
 import Slider from "react-slick";
 import image1 from "../../assets/images/hero/Hero-5.avif";
-import image2 from "../../assets/images/hero/Hero-6.avif";
+import image2 from "../../assets/images/hero/Hero-6-1.avif";
 import image3 from "../../assets/images/hero/Hero-7.avif";
 import image4 from "../../assets/images/hero/Hero-8.avif";
 import mobileImage1 from "../../assets/images/hero/Hero-5-mobile.avif";
-import mobileImage2 from "../../assets/images/hero/Hero-6-mobile.avif";
+import mobileImage2 from "../../assets/images/hero/Hero-6-1-mobile.avif";
 import mobileImage3 from "../../assets/images/hero/Hero-7-mobile.avif";
 import mobileImage4 from "../../assets/images/hero/Hero-8-mobile.avif";
 import styles from "./Hero.module.css";
@@ -38,8 +38,8 @@ export default function Hero() {
         {
             desktopImage: image2,
             mobileImage: mobileImage2,
-            title: "Expert Door & Window Repairs - Fast & Affordable!",
-            subtitle: "Don’t let broken doors or drafty windows increase your energy bills! Our handyman experts fix, replace, and install doors and windows for a secure and comfortable home.",
+            title: "Door and window installations and repairs",
+            subtitle: "Don’t let broken doors or drafty windows increase your energy bills! Our handyman expertise fix, replace, and install doors and windows for a secure and comfortable home.",
             button_primary: { text: "Contact Us Now", link: "#contact" },
         },
         {

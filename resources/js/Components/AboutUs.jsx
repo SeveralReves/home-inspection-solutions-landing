@@ -1,4 +1,4 @@
-import image from "../../assets/images/sections/about-1.avif";
+import image from "../../assets/images/sections/about-us-2.jpg";
 
 export default function AboutUs() {
     return (
@@ -19,7 +19,7 @@ export default function AboutUs() {
                             Welcome to Home Inspections & Solutions, where experience meets dedication to provide you with comprehensive home services in Valdosta, GA, and the surrounding areas. With a solid foundation built on over a decade of experience in the construction industry, we understand the intricacies of residential properties and are committed to ensuring your peace of mind, whether you're a homeowner, buyer, or seller.
                         </p>
                         <p className="text-gray-600 text-sm">
-                            At Home Inspections & Solutions, we pride ourselves on delivering reliable, high-quality workmanship and a strong commitment to customer satisfaction. We understand the value of a well-maintained and comfortable home, and we are dedicated to making your life easier. Let us take care of the hard work so you can enjoy your home to the fullest.
+                            At Home Inspections & Solutions, we pride ourselves on delivering reliable, high-quality workmanship and a strong commitment to customer satisfaction. We understand the value of a well-maintained and comfortable home, and we are dedicated to making your life easier. <strong>We are licensed and insured</strong>, so you can feel confident knowing your property is in trusted hands.
                         </p>
                         <p className="text-gray-600 text-sm">
                             Contact Home Inspections & Solutions today for all your home inspection and handyman needs. Let us help you ensure the safety, comfort, and value of your property.

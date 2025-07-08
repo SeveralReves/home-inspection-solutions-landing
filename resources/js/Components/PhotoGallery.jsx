@@ -18,6 +18,10 @@ import before5 from "../../assets/images/gallery/Before-5.avif";
 import after5 from "../../assets/images/gallery/After-5.avif";
 import before6 from "../../assets/images/gallery/Before-6.avif";
 import after6 from "../../assets/images/gallery/After-6.avif";
+import before7 from "../../assets/images/gallery/Before-7.avif";
+import after7 from "../../assets/images/gallery/After-7.avif";
+import before8 from "../../assets/images/gallery/Before-8.avif";
+import after8 from "../../assets/images/gallery/After-8.avif";
 
 import styles from "./PhotoGallery.module.css";
 
@@ -28,6 +32,8 @@ const images = [
   { before: before4, after: after4 },
   { before: before5, after: after5 },
   { before: before6, after: after6 },
+  { before: before7, after: after7 },
+  { before: before8, after: after8 },
 ];
 
 export default function PhotoGallery() {
