@@ -18,8 +18,10 @@ class PostSeeder extends Seeder
                 'published_at' => now()->subDays(2),
                 'cover' => 'posts/home-inspection.jpg',
                 'content' => [
+                    ['type' => 'title', 'value' => 'General Home Inspection for Single-Family House'],
                     ['type' => 'text', 'value' => '<p>The client requested an inspection before purchasing the property. Moisture issues and outdated wiring were found.</p>'],
                     ['type' => 'image', 'value' => 'posts/moisture-roof.jpg'],
+                    ['type' => 'title', 'value' => 'Gallery'],
                     ['type' => 'gallery', 'value' => ['posts/wiring1.jpg', 'posts/wiring2.jpg','posts/wiring3.jpg']]
                 ]
             ],
@@ -42,8 +44,15 @@ class PostSeeder extends Seeder
                 'published_at' => now()->subDays(5),
                 'cover' => 'posts/fence-repair.jpg',
                 'content' => [
-                    ['type' => 'image', 'src' => 'posts/fence-repair.jpg', 'alt' => 'Before and after fence repair'],
-                    ['type' => 'text', 'html' => '<p>Our handyman team replaced broken planks, reinforced posts, and applied a fresh coat of weatherproof paint for long-lasting durability.</p>']
+                    ['type' => 'text', 'value' => '<p>Our handyman team replaced broken planks, reinforced posts, and applied a fresh coat of weatherproof paint for long-lasting durability.</p>'],
+                    ['type' => 'image', 'value' => 'posts/fence-repair.jpg'],
+                    ['type' => 'text', 'value' => '<p>Our handyman team replaced broken planks, reinforced posts, and applied a fresh coat of weatherproof paint for long-lasting durability.</p>
+                        <p><strong>Key improvements:</strong></p>
+                        <ul>
+                            <li>Replaced 10 broken wooden planks.</li>
+                            <li>Reinforced 4 support posts.</li>
+                            <li>Applied a weatherproof coat to prevent further damage.</li>
+                        </ul>']
                 ],
             ],
             [
@@ -53,8 +62,15 @@ class PostSeeder extends Seeder
                 'published_at' => now()->subDays(5),
                 'cover' => 'posts/door-installation.jpg',
                 'content' => [
-                    ['type' => 'image', 'src' => 'posts/door-installation.jpg', 'alt' => 'New interior door being installed'],
-                    ['type' => 'text', 'html' => '<p>We installed three modern doors with brushed metal hardware, aligned and sealed to perfection for smooth closing and noise isolation.</p>']
+                    ['type' => 'title', 'value' => '<We installed three modern doors with brushed metal hardware'],
+                    ['type' => 'image', 'value' => 'posts/door-installation.jpg'],
+                    ['type' => 'text', 'value' => '<p>Our handyman team replaced broken planks, reinforced posts, and applied a fresh coat of weatherproof paint for long-lasting durability.</p>
+                        <p><strong>Key improvements:</strong></p>
+                        <ul>
+                            <li>Replaced 10 broken wooden planks.</li>
+                            <li>Reinforced 4 support posts.</li>
+                            <li>Applied a weatherproof coat to prevent further damage.</li>
+                        </ul>']
                 ],
             ]
         ];

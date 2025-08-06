@@ -39,7 +39,7 @@ export default function Show({ post, posts }) {
                             return (
                                 <div
                                     key={index}
-                                    className="mb-6 text-gray-800 leading-relaxed"
+                                    className="mb-6 text-gray-800 leading-relaxed custom-text-html"
                                     dangerouslySetInnerHTML={{ __html: block.value }}
                                 />
                             );
@@ -49,7 +49,7 @@ export default function Show({ post, posts }) {
                                     key={index}
                                     src={`/storage/${block.value}`}
                                     alt={`Image block ${index}`}
-                                    className="mb-6 rounded-lg shadow"
+                                    className="mb-6 rounded-lg shadow-lg w-full"
                                 />
                             );
                         case 'gallery':
@@ -74,8 +74,8 @@ export default function Show({ post, posts }) {
                             };
                             return (
                                 <div key={index} className="mb-12">
-                                    <h3 className="text-xl font-semibold mb-4 text-gray-800">Gallery</h3>
-                                    <Slider {...settings}>
+                                    {/* <h3 className="text-xl font-semibold mb-4 text-gray-800">Gallery</h3> */}
+                                    <Slider {...settings} className="overflow-hidden">
                                         {block.value.map((img, i) => (
                                             <div key={i}>
                                                 <img

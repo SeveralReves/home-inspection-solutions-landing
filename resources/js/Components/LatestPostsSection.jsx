@@ -1,6 +1,3 @@
-
-// components/LatestPostsSection.jsx
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -31,21 +28,29 @@ export default function LatestPostsSection({ posts }) {
                 <h2 className="text-3xl font-bold text-center text-gray-800">Latest Projects</h2>
                 <p className="text-center text-gray-600 mb-8">Discover our most recent work and inspections</p>
 
-                <Slider {...settings} className="-mx-3">
+                <Slider {...settings} className="overflow-hidden">
                     {posts.map(post => (
                         <div key={post.id} className="px-3 mb-2">
-                            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                                <img
-                                    src={`/storage/${post.cover}`}
-                                    alt={post.title}
-                                    className="w-full h-48 object-cover"
-                                />
-                                <div className="p-4">
+                            <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col h-full">
+                                {/* Enlazar la imagen */}
+                                <Link href={route('posts.show', post.slug) } className="overflow-hidden">
+                                    <img
+                                        src={`/storage/${post.cover}`}
+                                        alt={post.title}
+                                        className="w-full h-48 object-cover transform transition-transform duration-300 ease-in-out hover:scale-105"
+                                    />
+                                </Link>
+                                <div className="p-4 ">
+                                    {/* Enlazar el título */}
+                                    <Link href={route('posts.show', post.slug)}>
+                                        <h3 className="text-lg font-bold text-gray-800 mb-2 transition duration-300 ease-in-out">
+                                            {post.title}
+                                        </h3>
+                                    </Link>
                                     <p className="text-xs text-gray-400 mt-1">
                                         {new Date(post.published_at).toLocaleDateString()}
                                     </p>
                                     <span className="text-sm text-blue-600 font-medium">{post.category}</span>
-                                    <h3 className="text-lg font-bold text-gray-800 mt-2">{post.title}</h3>
                                     <p className="text-sm text-gray-600">{post.excerpt}</p>
                                     <Link
                                         href={route('posts.show', post.slug)}
@@ -58,7 +63,6 @@ export default function LatestPostsSection({ posts }) {
                         </div>
                     ))}
                 </Slider>
-
             </div>
         </section>
     );

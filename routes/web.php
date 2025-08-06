@@ -7,7 +7,7 @@ use Inertia\Inertia;
 use App\Models\Message;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
-
+use Illuminate\Support\Facades\Artisan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +18,19 @@ use App\Models\Post;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/run-commands', function () {
+    // Ejecutar migraciones
+    Artisan::call('migrate');
+
+    // Ejecutar el seeder de los posts
+    Artisan::call('db:seed', ['--class' => 'PostSeeder']);
+
+    // Crear el enlace simbólico para el almacenamiento
+    Artisan::call('storage:link');
+    
+    return 'Comandos ejecutados exitosamente!';
+});
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -59,15 +72,22 @@ Route::fallback(function () {
 
 Route::get('/api/posts/latest', [PostController::class, 'latest']);
 
-
 Route::get('/posts/{slug}', function ($slug) {
     $post = Post::where('slug', $slug)->firstOrFail();
     $post->content = json_decode($post->content);
+    
+    // Obtener los últimos 6 posts, excluyendo el post actual
+    $posts = Post::latest('published_at')
+                ->where('slug', '!=', $slug) // Excluir el post actual
+                ->take(6)
+                ->get();
+    
     return Inertia::render('Posts/Show', [
         'post' => $post,
-        'posts' => Post::latest('published_at')->take(6)->get(), // ✅ Envía los últimos 6 posts
+        'posts' => $posts, // ✅ Ahora los últimos 6 posts excluyen el actual
     ]);
 })->name('posts.show');
+
 
 // Route::get('/robots.txt', function () {
 //     $content = "User-agent: *\nDisallow:";

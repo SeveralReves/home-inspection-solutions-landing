@@ -85,3 +85,14 @@ html{
 .my-swal-button:hover {
     background-color: #0189d6 !important; /* Color al pasar el mouse */
 }
+
+.custom-text-html ul{
+    list-style: disc;
+    padding-left: 20px;
+}
+.custom-text-html {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* padding-left: 20px; */
+}
