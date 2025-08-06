@@ -5,6 +5,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Models\Message;
+use App\Http\Controllers\PostController;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +25,9 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-        'meta_description' => 'Home Inspections & Solutions is your go-to provider in Valdosta, GA for professional handyman services and comprehensive home inspections. From small home repairs to pre-purchase inspections, we deliver quality and reliability you can trust. Get your free estimate now!'
+        'meta_description' => 'Home Inspections & Solutions is your go-to provider in Valdosta, GA for professional handyman services and comprehensive home inspections. From small home repairs to pre-purchase inspections, we deliver quality and reliability you can trust. Get your free estimate now!',
+        'posts' => Post::latest('published_at')->take(6)->get(), // ✅ Envía los últimos 6 posts
+
     ]);
 });
 Route::get('/privacy-policy', function () {
@@ -50,6 +54,20 @@ Route::fallback(function () {
          'meta_description' => 'Page not found. The link you followed may be broken, or the page may have been removed. Please check the URL or use our site navigation.'
     ]);
 });
+
+
+
+Route::get('/api/posts/latest', [PostController::class, 'latest']);
+
+
+Route::get('/posts/{slug}', function ($slug) {
+    $post = Post::where('slug', $slug)->firstOrFail();
+    $post->content = json_decode($post->content);
+    return Inertia::render('Posts/Show', [
+        'post' => $post,
+        'posts' => Post::latest('published_at')->take(6)->get(), // ✅ Envía los últimos 6 posts
+    ]);
+})->name('posts.show');
 
 // Route::get('/robots.txt', function () {
 //     $content = "User-agent: *\nDisallow:";

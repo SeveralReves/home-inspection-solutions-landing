@@ -11,10 +11,11 @@ import HandymanServices from '../Components/HandymanServices';
 import InspectionServices from '../Components/InspectionServices';
 import CertificatesBanner from '../Components/Certificates.jsx';
 import PhotoGallery from '../Components/PhotoGallery.jsx';
+import LatestPostsSection from '../Components/LatestPostsSection.jsx';
 import ScanMe from '../Components/ScanMe.jsx';
 import { MessageCircle } from "lucide-react";
 
-export default function Welcome({ auth, laravelVersion, phpVersion }) {
+export default function Welcome({ auth, laravelVersion, phpVersion, posts }) {
     return (
         <>
             <Head />
@@ -23,6 +24,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             <GoogleReviews />
             <HandymanServices />
             <PhotoGallery />
+            <LatestPostsSection posts={posts}/>
             <CertificatesBanner />
             <InspectionServices />
             <AboutUs />
