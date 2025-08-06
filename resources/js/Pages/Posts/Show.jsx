@@ -3,6 +3,9 @@ import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import LatestPostsSection from '../../Components/LatestPostsSection.jsx';
 import { Link } from '@inertiajs/react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Show({ post, posts }) {
     return (
@@ -26,10 +29,14 @@ export default function Show({ post, posts }) {
 
             {/* Bloques de contenido */}
             <section className="py-12 px-4 max-w-4xl mx-auto">
-                {post.content?.map((block, index) => {
+                {Array.isArray(post.content) && post.content?.map((block, index) => {
                     switch (block.type) {
+                        case 'title':
+                            return (
+                                <h2 key={index} className="text-2xl font-bold text-gray-800 mb-4">{block.value}</h2>
+                            );
                         case 'text':
-                           return (
+                            return (
                                 <div
                                     key={index}
                                     className="mb-6 text-gray-800 leading-relaxed"
@@ -40,22 +47,45 @@ export default function Show({ post, posts }) {
                             return (
                                 <img
                                     key={index}
-                                    src={block.value}
+                                    src={`/storage/${block.value}`}
                                     alt={`Image block ${index}`}
                                     className="mb-6 rounded-lg shadow"
                                 />
                             );
                         case 'gallery':
+                            const settings = {
+                                customPaging: function (i) {
+                                    return (
+                                        <a>
+                                            <img
+                                                src={`/storage/${block.value[i]}`}
+                                                className="h-12 w-auto object-cover rounded"
+                                                alt={`Thumbnail ${i}`}
+                                            />
+                                        </a>
+                                    );
+                                },
+                                dots: true,
+                                dotsClass: "slick-dots-thumbnail slick-thumb mt-4",
+                                infinite: true,
+                                speed: 500,
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                            };
                             return (
-                                <div key={index} className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-                                    {block.value.map((img, i) => (
-                                        <img
-                                            key={i}
-                                            src={img}
-                                            alt={`Gallery image ${i}`}
-                                            className="rounded shadow"
-                                        />
-                                    ))}
+                                <div key={index} className="mb-12">
+                                    <h3 className="text-xl font-semibold mb-4 text-gray-800">Gallery</h3>
+                                    <Slider {...settings}>
+                                        {block.value.map((img, i) => (
+                                            <div key={i}>
+                                                <img
+                                                    src={`/storage/${img}`}
+                                                    alt={`Gallery image ${i}`}
+                                                    className="rounded-lg "
+                                                />
+                                            </div>
+                                        ))}
+                                    </Slider>
                                 </div>
                             );
                         default:
@@ -63,10 +93,9 @@ export default function Show({ post, posts }) {
                     }
                 })}
             </section>
+
             <LatestPostsSection posts={posts}/>
-            
             <Footer />
-            
         </>
     );
 }

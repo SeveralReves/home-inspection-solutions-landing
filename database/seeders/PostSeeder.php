@@ -20,7 +20,7 @@ class PostSeeder extends Seeder
                 'content' => [
                     ['type' => 'text', 'value' => '<p>The client requested an inspection before purchasing the property. Moisture issues and outdated wiring were found.</p>'],
                     ['type' => 'image', 'value' => 'posts/moisture-roof.jpg'],
-                    ['type' => 'gallery', 'value' => ['posts/wiring1.jpg', 'posts/wiring2.jpg']]
+                    ['type' => 'gallery', 'value' => ['posts/wiring1.jpg', 'posts/wiring2.jpg','posts/wiring3.jpg']]
                 ]
             ],
             [
@@ -36,27 +36,27 @@ class PostSeeder extends Seeder
                 ]
             ],
             [
-                'title' => 'Technical Report for Property Sale',
-                'excerpt' => 'We delivered a comprehensive technical report to support the client in selling their property.',
-                'category' => 'Technical Report',
-                'published_at' => now()->subDays(10),
-                'cover' => 'posts/technical-report.jpg',
+                'title' => 'Fence Repair for Suburban Home',
+                'excerpt' => 'Repaired a damaged wooden fence after a storm in a suburban neighborhood.',
+                'category' => 'Handyman',
+                'published_at' => now()->subDays(5),
+                'cover' => 'posts/fence-repair.jpg',
                 'content' => [
-                    ['type' => 'text', 'value' => 'The report included roof inspection, drainage system, and evaluations of the electrical and plumbing systems.'],
-                    ['type' => 'gallery', 'value' => ['posts/roof1.jpg', 'posts/drainage1.jpg']]
-                ]
+                    ['type' => 'image', 'src' => 'posts/fence-repair.jpg', 'alt' => 'Before and after fence repair'],
+                    ['type' => 'text', 'html' => '<p>Our handyman team replaced broken planks, reinforced posts, and applied a fresh coat of weatherproof paint for long-lasting durability.</p>']
+                ],
             ],
             [
-                'title' => 'Pre-Purchase Inspection for Apartment',
-                'excerpt' => 'Full apartment inspection performed before client completed their purchase.',
-                'category' => 'Pre-Purchase Inspection',
-                'published_at' => now()->subDays(15),
-                'cover' => 'posts/prepurchase-inspection.jpg',
+                'title' => 'Interior Door Installation Project',
+                'excerpt' => 'Installed new custom-fit doors for improved home privacy and aesthetics.',
+                'category' => 'Handyman',
+                'published_at' => now()->subDays(5),
+                'cover' => 'posts/door-installation.jpg',
                 'content' => [
-                    ['type' => 'text', 'value' => 'Minor leaks and poor bathroom ventilation were noted, but no critical structural issues were found.'],
-                    ['type' => 'image', 'value' => 'posts/bathroom-leak.jpg'],
-                ]
-            ],
+                    ['type' => 'image', 'src' => 'posts/door-installation.jpg', 'alt' => 'New interior door being installed'],
+                    ['type' => 'text', 'html' => '<p>We installed three modern doors with brushed metal hardware, aligned and sealed to perfection for smooth closing and noise isolation.</p>']
+                ],
+            ]
         ];
 
         foreach ($posts as $post) {

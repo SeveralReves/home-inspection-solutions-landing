@@ -47,7 +47,18 @@ body {
 #home .slick-slider .slick-dots{
     bottom: 30px;
 }
-
+.slick-dots-thumbnail img {
+    opacity: 0.5;
+    cursor: pointer;
+}
+.slick-dots-thumbnail .slick-active img {
+    opacity: 1;
+}
+.slick-dots-thumbnail  {
+    display: flex !important;
+    justify-content: center;
+    gap: 20px;
+}
 .slick-slide > div {
     display: flex;
 }

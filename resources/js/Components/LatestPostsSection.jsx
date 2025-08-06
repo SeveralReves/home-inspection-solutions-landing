@@ -31,29 +31,34 @@ export default function LatestPostsSection({ posts }) {
                 <h2 className="text-3xl font-bold text-center text-gray-800">Latest Projects</h2>
                 <p className="text-center text-gray-600 mb-8">Discover our most recent work and inspections</p>
 
-                <Slider {...settings}>
+                <Slider {...settings} className="-mx-3">
                     {posts.map(post => (
-                        <div key={post.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
-                            <img
-                                src={`/storage/${post.cover}`}
-                                alt={post.title}
-                                className="w-full h-48 object-cover"
-                            />
-                            <div className="p-4">
-                                <p className="text-xs text-gray-400 mt-1">{new Date(post.published_at).toLocaleDateString()}</p>
-                                <span className="text-sm text-blue-600 font-medium">{post.category}</span>
-                                <h3 className="text-lg font-bold text-gray-800 mt-2">{post.title}</h3>
-                                <p className="text-sm text-gray-600">{post.excerpt}</p>
-                                <Link
-                                    href={route('posts.show', post.slug)}
-                                    className="inline-block mt-3 text-blue-600 hover:underline text-sm"
-                                >
-                                    View More →
-                                </Link>
+                        <div key={post.id} className="px-3 mb-2">
+                            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                                <img
+                                    src={`/storage/${post.cover}`}
+                                    alt={post.title}
+                                    className="w-full h-48 object-cover"
+                                />
+                                <div className="p-4">
+                                    <p className="text-xs text-gray-400 mt-1">
+                                        {new Date(post.published_at).toLocaleDateString()}
+                                    </p>
+                                    <span className="text-sm text-blue-600 font-medium">{post.category}</span>
+                                    <h3 className="text-lg font-bold text-gray-800 mt-2">{post.title}</h3>
+                                    <p className="text-sm text-gray-600">{post.excerpt}</p>
+                                    <Link
+                                        href={route('posts.show', post.slug)}
+                                        className="inline-block mt-3 bg-secondary hover:bg-primary transition duration-300 ease-in-out text-white font-semibold py-2 px-6 rounded-full shadow-lg"
+                                    >
+                                        View More →
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </Slider>
+
             </div>
         </section>
     );
