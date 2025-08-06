@@ -19,18 +19,18 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
-Route::get('/run-commands', function () {
-    // Ejecutar migraciones
-    Artisan::call('migrate');
+// Route::get('/run-commands', function () {
+//     // Ejecutar migraciones
+//     Artisan::call('migrate');
 
-    // Ejecutar el seeder de los posts
-    Artisan::call('db:seed', ['--class' => 'PostSeeder']);
+//     // Ejecutar el seeder de los posts
+//     Artisan::call('db:seed', ['--class' => 'PostSeeder']);
 
-    // Crear el enlace simbólico para el almacenamiento
-    Artisan::call('storage:link');
+//     // Crear el enlace simbólico para el almacenamiento
+//     Artisan::call('storage:link');
     
-    return 'Comandos ejecutados exitosamente!';
-});
+//     return 'Comandos ejecutados exitosamente!';
+// });
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
