@@ -21,13 +21,13 @@ use Illuminate\Support\Facades\Artisan;
 
 // Route::get('/run-commands', function () {
 //     // Ejecutar migraciones
-//     Artisan::call('migrate');
+//     // Artisan::call('migrate');
 
 //     // Ejecutar el seeder de los posts
 //     Artisan::call('db:seed', ['--class' => 'PostSeeder']);
 
 //     // Crear el enlace simbólico para el almacenamiento
-//     Artisan::call('storage:link');
+//     // Artisan::call('storage:link');
     
 //     return 'Comandos ejecutados exitosamente!';
 // });
@@ -71,6 +71,17 @@ Route::fallback(function () {
 
 
 Route::get('/api/posts/latest', [PostController::class, 'latest']);
+
+Route::get('/api/posts', [PostController::class, 'paginate']); 
+
+Route::get('/posts', function () {
+    return Inertia::render('Posts/Index', [
+        'hero' => [
+            'title' => 'Our Latest Projects',
+            'image' => '/storage/hero/posts-hero.jpg', // cámbialo si quieres
+        ],
+    ]);
+})->name('posts.index');
 
 Route::get('/posts/{slug}', function ($slug) {
     $post = Post::where('slug', $slug)->firstOrFail();

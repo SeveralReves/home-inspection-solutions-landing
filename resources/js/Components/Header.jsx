@@ -24,10 +24,11 @@ export default function Header() {
     }, []);
 
     const links = [
-        { url: "#home", title: "Home" },
-        { url: "#handyman", title: "Handyman" },
-        { url: "#inspections", title: "Inspections" },
-        { url: "#about", title: "About Us" },
+        { url: "/#home", title: "Home" },
+        { url: "/#handyman", title: "Handyman" },
+        { url: "/#inspections", title: "Inspections" },
+        { url: "/#about", title: "About Us" },
+        { url: "/#projects", title: "Latest Projects" },
     ];
 
     return (

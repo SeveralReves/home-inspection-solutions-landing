@@ -8,6 +8,26 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Show({ post, posts }) {
+    // helpers (arriba del componente)
+    const getYouTubeId = (input = "") => {
+        // Si es ID "corto"
+        if (/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
+
+        // Si es URL...
+        try {
+            const url = new URL(input);
+            if (url.hostname === 'youtu.be') return url.pathname.slice(1);
+            if (url.hostname.includes('youtube.com')) {
+            if (url.searchParams.get('v')) return url.searchParams.get('v');
+            // /embed/VIDEO_ID
+            const parts = url.pathname.split('/');
+            const idx = parts.indexOf('embed');
+            if (idx !== -1 && parts[idx + 1]) return parts[idx + 1];
+            }
+        } catch {}
+        return null;
+    };
+
     return (
         <>
             <Head title={post.title} />
@@ -19,10 +39,10 @@ export default function Show({ post, posts }) {
                         {new Date(post.created_at).toLocaleDateString()}
                     </p>
                     <Link
-                        href="/"
+                        href="/posts"
                         className="inline-block bg-white text-primary font-semibold px-6 py-2 rounded-full shadow hover:bg-gray-100 transition"
                     >
-                        ← Back to Home
+                        ← Back to Posts
                     </Link>
                 </div>
             </section>
@@ -88,6 +108,27 @@ export default function Show({ post, posts }) {
                                     </Slider>
                                 </div>
                             );
+                        case 'youtube': {
+                            const id = getYouTubeId(block.value);
+                            if (!id) return null;
+                            return (
+                                <div key={index} className="mb-8">
+                                {block.title && (
+                                    <h3 className="text-xl font-semibold mb-3 text-gray-800">{block.title}</h3>
+                                )}
+                                <div className="w-full aspect-video rounded-lg overflow-hidden shadow">
+                                    <iframe
+                                    src={`https://www.youtube.com/embed/${id}`}
+                                    title="YouTube video player"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                    className="w-full h-full"
+                                    />
+                                </div>
+                                </div>
+                            );
+                        }
+
                         default:
                             return null;
                     }

@@ -96,3 +96,9 @@ html{
     gap: 15px;
     /* padding-left: 20px; */
 }
+.sliderposts{
+    padding-bottom: 40px;
+}
+.sliderposts .slick-dots {
+   bottom: 25px;
+}

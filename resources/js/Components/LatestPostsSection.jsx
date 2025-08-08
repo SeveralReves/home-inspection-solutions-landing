@@ -23,12 +23,12 @@ export default function LatestPostsSection({ posts }) {
     };
 
     return (
-        <section className="py-12 bg-gray-50">
+        <section id="projects" className="py-12 bg-gray-50">
             <div className="max-w-6xl mx-auto px-4">
                 <h2 className="text-3xl font-bold text-center text-gray-800">Latest Projects</h2>
                 <p className="text-center text-gray-600 mb-8">Discover our most recent work and inspections</p>
 
-                <Slider {...settings} className="overflow-hidden">
+                <Slider {...settings} className="overflow-hidden sliderposts">
                     {posts.map(post => (
                         <div key={post.id} className="px-3 mb-2">
                             <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col h-full">
@@ -63,6 +63,12 @@ export default function LatestPostsSection({ posts }) {
                         </div>
                     ))}
                 </Slider>
+                <Link
+                    href={route('posts.index')}
+                    className="inline-block mt-3 mx-auto text-center bg-secondary hover:bg-primary transition duration-300 ease-in-out text-white font-semibold py-2 px-6 rounded-full shadow-lg flex w-fit"
+                >
+                    View all →
+                </Link>
             </div>
         </section>
     );
