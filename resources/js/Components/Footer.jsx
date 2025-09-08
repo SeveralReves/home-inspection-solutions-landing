@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
-import Logo from "../../assets/images/logos/home_4.png";
+import Logo from "../../assets/images/logos/home_footer.png";
 
 export default function Footer() {
     const links = [
