@@ -24,22 +24,35 @@ export default function Edit({auth, post }) {
     if (data.category) form.append('category', data.category);
     if (data.published_at) form.append('published_at', data.published_at);
     if (data.cover) form.append('cover', data.cover);
+    
+    
+   const payload = data.content.map((b, i) => {
+    const copy = { ...b };
 
-    const payload = data.content.map((b, i) => {
-      const copy = { ...b };
-      if (b.type === 'image' && b.file) {
-        form.append(`content_files[${i}]`, b.file);
-      }
-      if (b.type === 'gallery' && b.newFiles?.length) {
-        b.newFiles.forEach((f, k) => form.append(`content_files_gallery[${i}][${k}]`, f));
-      }
-      delete copy.file;
-      delete copy.newFiles;
-      return copy;
-    });
-    form.append('content', JSON.stringify(payload));
+    if (b.type === 'image' && b.file) {
+      // ENVIAR archivo por FormData
+      form.append(`content_files[${i}]`, b.file);
+      // NO toques copy.value aquí; el backend lo reemplaza con la ruta
+    }
 
-    submit(route('admin.posts.update', post.id), { data: form });
+    if (b.type === 'gallery') {
+      const base = Array.isArray(b.value) ? b.value.length : 0;
+      if (b.newFiles?.length) {
+        b.newFiles.forEach((f, k) => {
+          if (f) form.append(`content_files_gallery[${i}][${base + k}]`, f);
+        });
+      }
+    }
+
+    // Limpia referencias a File para no meterlas en el JSON
+    delete copy.file;
+    delete copy.newFiles;
+
+    return copy;
+  });
+
+  form.append('content', JSON.stringify(payload));
+  submit(route('admin.posts.update', post.id), { data: form });
   };
 
   return (

@@ -8,6 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    protected $casts = ['content' => 'array'];
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'excerpt',
+        'category',
+        'published_at',
+        'cover',
+        'content',
+    ];
+
+    protected $casts = [
+        'content' => 'array',       // Eloquent convertirá JSON ↔ array
+        'published_at' => 'datetime',
+    ];
 }

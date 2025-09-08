@@ -34,24 +34,35 @@ class PostAdminController extends Controller
             ? $request->file('cover')->store('posts', 'public')
             : null;
 
-        // Content (JSON string -> array)
-        $content = json_decode($data['content'] ?? '[]', true) ?? [];
+        // Content: aceptar string o array
+        $rawContent = $data['content'] ?? [];
+        if (is_string($rawContent)) {
+            $content = json_decode($rawContent, true) ?? [];
+        } elseif (is_array($rawContent)) {
+            $content = $rawContent;
+        } else {
+            $content = [];
+        }
 
         // Procesar imágenes dentro de bloques (image / gallery)
         $content = $this->processBlocksUploads($content, $request);
 
         $post = Post::create([
             'title'        => $data['title'],
-            'slug'         => !empty($data['slug']) ? Str::slug($data['slug']) : Str::slug($data['title']),
+            'slug'         => !empty($data['slug'])
+                ? Str::slug($data['slug'])
+                : Str::slug($data['title']),
             'excerpt'      => $data['excerpt'] ?? null,
             'category'     => $data['category'] ?? null,
             'published_at' => $data['published_at'] ?? now(),
             'cover'        => $coverPath,
-            'content'      => $content, // eloquent cast to array
+            'content'      => $content, // eloquent cast a array/json
         ]);
 
-        return redirect()->route('admin.posts.index')->with('success', 'Post created');
+        return redirect()->route('admin.posts.index')
+            ->with('success', 'Post created');
     }
+
 
     public function edit(Post $post)
     {
@@ -82,6 +93,7 @@ class PostAdminController extends Controller
             $content = [];
         }
 
+        
         // Si tienes uploads embebidos en los bloques
         $content = $this->processBlocksUploads($content, $request);
 
@@ -117,38 +129,63 @@ class PostAdminController extends Controller
      */
     protected function processBlocksUploads(array $content, Request $request): array
     {
+        // Forma "plana" (lo que esperabas)
+        $imageFilesFlat   = $request->file('content_files', []);            // [i => UploadedFile]
+        $galleryFilesFlat = $request->file('content_files_gallery', []);    // [i => [k => UploadedFile]]
+
+        // Forma "anidada" (lo que está llegando)
+        $nested = $request->file('content', []); // [i => ['file' => UploadedFile, 'newFiles' => [UploadedFile,...]]]
+
         foreach ($content as $i => $block) {
-            if (($block['type'] ?? '') === 'image') {
-                if ($request->hasFile("content_files.$i")) {
-                    $path = $request->file("content_files.$i")->store('posts', 'public');
+            $type = $block['type'] ?? null;
+
+            if ($type === 'image') {
+                // Prioridad: plano, si no, anidado
+                $file = $imageFilesFlat[$i] ?? ($nested[$i]['file'] ?? null);
+
+                if ($file instanceof \Illuminate\Http\UploadedFile && $file->isValid()) {
+                    $path = $file->store('posts', 'public');
                     $content[$i]['value'] = $path;
+                } else {
+                    // Mantén el value previo si ya existía; evita forzar null
+                    $content[$i]['value'] = $content[$i]['value'] ?? null;
                 }
             }
-            if (($block['type'] ?? '') === 'gallery') {
-                // Puede venir mezcla de strings y archivos
-                $newValues = [];
-                $existing  = is_array($block['value'] ?? []) ? $block['value'] : [];
-                foreach ($existing as $k => $val) {
-                    // Si en ese lugar vino un file, lo guardamos
-                    if ($request->hasFile("content_files_gallery.$i.$k")) {
-                        $path = $request->file("content_files_gallery.$i.$k")->store('posts', 'public');
-                        $newValues[] = $path;
-                    } else {
-                        // Mantener string ya existente
-                        $newValues[] = $val;
+
+            if ($type === 'gallery') {
+                $current = is_array($block['value'] ?? null) ? $block['value'] : [];
+
+                // Reemplazos por índice (plano)
+                if (isset($galleryFilesFlat[$i]) && is_array($galleryFilesFlat[$i])) {
+                    foreach ($current as $k => $val) {
+                        $file = $galleryFilesFlat[$i][$k] ?? null;
+                        if ($file instanceof \Illuminate\Http\UploadedFile && $file->isValid()) {
+                            $current[$k] = $file->store('posts', 'public');
+                        }
                     }
-                }
-                // También aceptar nuevos archivos añadidos al final (sin índice previo)
-                if ($request->hasFile("content_files_gallery.$i")) {
-                    foreach ($request->file("content_files_gallery.$i") as $file) {
-                        if ($file) {
-                            $newValues[] = $file->store('posts', 'public');
+                    // Nuevos al final
+                    foreach ($galleryFilesFlat[$i] as $k => $file) {
+                        if (!array_key_exists($k, $current) && $file instanceof \Illuminate\Http\UploadedFile && $file->isValid()) {
+                            $current[] = $file->store('posts', 'public');
                         }
                     }
                 }
-                $content[$i]['value'] = $newValues;
+
+                // Forma anidada para galería (si tu editor la envía como content[i][newFiles][])
+                if (isset($nested[$i]['newFiles']) && is_array($nested[$i]['newFiles'])) {
+                    foreach ($nested[$i]['newFiles'] as $file) {
+                        if ($file instanceof \Illuminate\Http\UploadedFile && $file->isValid()) {
+                            $current[] = $file->store('posts', 'public');
+                        }
+                    }
+                }
+
+                $content[$i]['value'] = $current;
             }
         }
+
         return $content;
     }
+
+
 }
