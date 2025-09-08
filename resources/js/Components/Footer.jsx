@@ -3,10 +3,10 @@ import Logo from "../../assets/images/logos/home_4.png";
 
 export default function Footer() {
     const links = [
-        { url: "#home", title: "Home" },
-        { url: "#handyman", title: "Handyman" },
-        { url: "#inspections", title: "Inspections" },
-        { url: "#about", title: "About Us" },
+        { url: "/#home", title: "Home" },
+        { url: "/#handyman", title: "Handyman" },
+        { url: "/#about", title: "About Us" },
+        { url: "/#projects", title: "Latest Projects" },
     ];
     const socialLinks = [
         { url: "#", icon: <Facebook className="w-4 h-4 hover:text-secondary transition" /> },
@@ -38,7 +38,7 @@ export default function Footer() {
             <div className="container mx-auto max-w-7xl flex flex-col md:flex-row justify-center md:justify-between items-top p-6 md:p-8 gap-20">
                 <div className="flex flex-col gap-6">
                     <a href="/" className="flex-shrink-0">
-                        <img src={Logo} alt="Logo Home Inspections" title="Logo Home Inspections" className="h-20 w-auto" />
+                        <img src={Logo} alt="Logo Home Handyman Solutions" title="Logo Home Handyman Solutions" className="h-20 w-auto" />
                     </a>
                     <div className="flex gap-6">
                         {/* Redes Sociales */}
@@ -83,7 +83,7 @@ export default function Footer() {
 
             {/* Línea Separadora y Copyright */}
             <div className="border-t border-gray-600 mt-4 py-4 text-center">
-                <p className="text-sm text-gray-400">© {new Date().getFullYear()} Home Inspections. All Rights Reserved.</p>
+                <p className="text-sm text-gray-400">© {new Date().getFullYear()} Home Handyman Solutions. All Rights Reserved. Developed by <a href="https://severalreves.lat/">SeveralReves</a></p>
             </div>
         </footer>
     );

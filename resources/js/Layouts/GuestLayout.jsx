@@ -10,8 +10,8 @@ export default function Guest({ children }) {
                 <img
                                         src={Logo}
                                         style={{width: '400px'}}
-                                        alt="Logo Home Inspections"
-                                        title="Logo Home Inspections"
+                                        alt="Logo Home Handyman Solutions"
+                                        title="Logo Home Handyman Solutions"
                                     />
                 </Link>
             </div>

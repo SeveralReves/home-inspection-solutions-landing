@@ -25,7 +25,7 @@ export default function Privcacy() {
                         Last Updated: 03/19/2025
                     </p>
                     <p className="text-gray-600 text-sm mb-3">
-                        Welcome to <strong>Home Inspections & Solutions</strong>
+                        Welcome to <strong>Home Handyman Solutions</strong>
                         . We take our users' privacy seriously. This Privacy
                         Policy describes how we collect, use, and protect the
                         information you provide when using our quotation request

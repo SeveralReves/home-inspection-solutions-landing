@@ -107,7 +107,7 @@ class PostSeeder extends Seeder
                 'content' => [
                     ['type' => 'title', 'value' => 'Deck Restoration'],
                     ['type' => 'text', 'value' => '<p>Replaced rotted boards, tightened fasteners, and applied exterior-grade stain to extend lifespan.</p>'],
-                    ['type' => 'youtube', 'title' => 'Time-lapse', 'value' => 'https://www.youtube.com/watch?v=Zi_XLOBDo_Y'],
+                    ['type' => 'youtube', 'title' => 'Time-lapse', 'value' => 'https://www.youtube.com/watch?v=8Z0V7sS6zKw?si=nzZsW09N4ikHaX41'],
                 ],
             ],
             [

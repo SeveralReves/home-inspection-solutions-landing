@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Headroom from "headroom.js";
 import { Menu, X } from "lucide-react"; // Íconos del menú
 import styles from "./Header.module.css";
-import Logo from "../../assets/images/logos/home.png";
+import Logo from "../../assets/images/logos/handyman.png";
 
 export default function Header() {
     const headerRef = useRef(null);
@@ -26,7 +26,7 @@ export default function Header() {
     const links = [
         { url: "/#home", title: "Home" },
         { url: "/#handyman", title: "Handyman" },
-        { url: "/#inspections", title: "Inspections" },
+        // { url: "/#inspections", title: "Inspections" },
         { url: "/#about", title: "About Us" },
         { url: "/#projects", title: "Latest Projects" },
     ];
@@ -43,8 +43,8 @@ export default function Header() {
                     <img
                         src={Logo}
                         className={styles.logo}
-                        alt="Logo Home Inspections"
-                        title="Logo Home Inspections"
+                        alt="Logo Home handyman solutions"
+                        title="Logo Home handyman solutions"
                     />
                 </a>
 
@@ -92,8 +92,8 @@ export default function Header() {
                         <img
                             src={Logo}
                             className={styles.logo}
-                            alt="Logo Home Inspections"
-                            title="Logo Home Inspections"
+                            alt="Logo Home handyman solutions"
+                            title="Logo Home handyman solutions"
                         />
                     </a>
                     <button

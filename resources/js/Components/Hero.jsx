@@ -3,11 +3,9 @@ import Slider from "react-slick";
 import image1 from "../../assets/images/hero/Hero-5.avif";
 import image2 from "../../assets/images/hero/Hero-6-1.avif";
 import image3 from "../../assets/images/hero/Hero-7.avif";
-import image4 from "../../assets/images/hero/Hero-8.avif";
 import mobileImage1 from "../../assets/images/hero/Hero-5-mobile.avif";
 import mobileImage2 from "../../assets/images/hero/Hero-6-1-mobile.avif";
 import mobileImage3 from "../../assets/images/hero/Hero-7-mobile.avif";
-import mobileImage4 from "../../assets/images/hero/Hero-8-mobile.avif";
 import styles from "./Hero.module.css";
 
 import "slick-carousel/slick/slick.css";
@@ -49,14 +47,6 @@ export default function Hero() {
             subtitle: "Upgrade your home with professional painting and carpentry. Whether it’s a fresh coat of paint or custom woodwork, our handyman services will bring your vision to life.",
             button_secondary: { text: "See Our Work", link: "#gallery" },
         },
-        {
-            desktopImage: image4,
-            mobileImage: mobileImage4,
-            title: "Certified Home Inspections Near You!",
-            subtitle: "Buying or selling a home? Our professional home inspectors provide detailed reports to ensure your property is safe and up to code. Book your inspection today!",
-            button_primary: { text: "Schedule Inspection", link: "#contact" },
-            button_secondary: { text: "Learn About Inspections", link: "#inspections" }
-        }
     ];
 
     return (

@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 const faqs = [
     {
         question: "What services do you offer?",
-        answer: "We provide handyman services and professional inspections to ensure quality and safety.",
+        answer: "We provide professional handyman services to keep your home in great shape.",
     },
     {
         question: "What types of general home repairs do you handle?",
@@ -17,10 +17,6 @@ const faqs = [
     {
         question: "Can you help with electrical fixture installations?",
         answer: "Yes, we can assist with the installation of various electrical fixtures, such as light fixtures, ceiling fans, and outlets. For major electrical work or wiring issues, we recommend consulting a qualified electrician.",
-    },
-    {
-        question: "Why should a first-time home buyer get a home inspection in Valdosta?",
-        answer: "A home inspection is crucial for first-time home buyers in Valdosta because it provides an unbiased assessment of the property's condition before you make a significant investment. It can reveal potential issues, from structural problems to minor repairs, allowing you to negotiate repairs, adjust your offer, or avoid costly surprises down the road. It offers peace of mind and helps you understand the true condition of your new home.",
     },
 ];
 

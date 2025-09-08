@@ -8,7 +8,6 @@ import GoogleReviews2 from '../Components/GoogleReviews2';
 import Faq from '../Components/Faq';
 import Contact from '../Components/Contact';
 import HandymanServices from '../Components/HandymanServices';
-import InspectionServices from '../Components/InspectionServices';
 import CertificatesBanner from '../Components/Certificates.jsx';
 import PhotoGallery from '../Components/PhotoGallery.jsx';
 import LatestPostsSection from '../Components/LatestPostsSection.jsx';
@@ -26,7 +25,6 @@ export default function Welcome({ auth, laravelVersion, phpVersion, posts }) {
             <PhotoGallery />
             <LatestPostsSection posts={posts}/>
             <CertificatesBanner />
-            <InspectionServices />
             <AboutUs />
             <GoogleReviews2 />
             <Faq />

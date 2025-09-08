@@ -86,19 +86,98 @@ html{
     background-color: #0189d6 !important; /* Color al pasar el mouse */
 }
 
-.custom-text-html ul{
+/* .custom-text-html ul{
     list-style: disc;
     padding-left: 20px;
-}
+} */
 .custom-text-html {
     display: flex;
     flex-direction: column;
     gap: 15px;
     /* padding-left: 20px; */
 }
+
 .sliderposts{
     padding-bottom: 40px;
 }
 .sliderposts .slick-dots {
    bottom: 25px;
+}
+@layer components {
+  .custom-text-html h1,
+  .custom-text-html h2,
+  .custom-text-html h3,
+  .custom-text-html h4 {
+    @apply font-bold text-gray-900 mb-4 mt-6;
+  }
+
+  .custom-text-html p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .custom-text-html a {
+    @apply text-primary underline hover:text-secondary transition;
+  }
+
+  .custom-text-html ul {
+    @apply list-disc pl-6 mb-4;
+  }
+
+  .custom-text-html ol {
+    @apply list-decimal pl-6 mb-4;
+  }
+
+  .custom-text-html blockquote {
+    @apply border-l-4 border-primary pl-4 italic text-gray-600 my-6;
+  }
+
+  .custom-text-html img {
+    @apply rounded-lg shadow mb-6;
+  }
+}
+@layer components {
+  .custom-text-html h5,
+  .custom-text-html h6 {
+    @apply font-semibold text-gray-900 mb-3 mt-5;
+  }
+
+  .custom-text-html strong { @apply font-semibold text-gray-900; }
+  .custom-text-html em { @apply italic; }
+
+  .custom-text-html hr { @apply my-8 border-t border-gray-200; }
+
+  .custom-text-html figure { @apply my-6; }
+  .custom-text-html figcaption { @apply text-sm text-gray-500 mt-2 text-center; }
+
+  .custom-text-html table { @apply w-full border-collapse my-6 text-sm; }
+  .custom-text-html thead th { @apply border-b border-gray-300 font-semibold text-left px-3 py-2; }
+  .custom-text-html tbody td { @apply border-b border-gray-200 px-3 py-2 align-top; }
+  .custom-text-html tbody tr:last-child td { @apply border-b-0; }
+
+  .custom-text-html code {
+    @apply rounded px-1 py-0.5 text-[0.95em] bg-gray-100 text-gray-800;
+  }
+  .custom-text-html pre {
+    @apply bg-gray-900 text-gray-100 text-sm p-4 rounded-lg overflow-x-auto my-6;
+  }
+  .custom-text-html pre code { @apply bg-transparent p-0 text-inherit; }
+
+  .custom-text-html a:focus {
+    @apply outline-none ring-2 ring-secondary ring-offset-2 ring-offset-white;
+  }
+
+  /* Imágenes responsivas dentro del contenido */
+  .custom-text-html img {
+    @apply max-w-full h-auto rounded-lg shadow mb-6;
+  }
+
+  /* Vídeos o iframes incrustados (si llegan por HTML) */
+  .custom-text-html iframe {
+    @apply w-full rounded-lg shadow my-6;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Listas anidadas con buen espaciado */
+  .custom-text-html li > ul,
+  .custom-text-html li > ol { @apply mt-2; }
 }

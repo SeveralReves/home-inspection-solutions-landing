@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostAdminController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -8,6 +9,7 @@ use App\Models\Message;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Artisan;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,14 +40,14 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-        'meta_description' => 'Home Inspections & Solutions is your go-to provider in Valdosta, GA for professional handyman services and comprehensive home inspections. From small home repairs to pre-purchase inspections, we deliver quality and reliability you can trust. Get your free estimate now!',
+        'meta_description' => 'Home Handyman Solutions is your go-to provider in Valdosta, GA for professional handyman services. From small home repairs to larger projects, we deliver quality and reliability you can trust. Get your free estimate now!',
         'posts' => Post::latest('published_at')->take(6)->get(), // ✅ Envía los últimos 6 posts
 
     ]);
 });
 Route::get('/privacy-policy', function () {
     return Inertia::render('Privacy', [
-        'meta_description' => 'Learn how Home Inspections & Solutions protects your personal information. Read our privacy policy for details on data collection, usage, and security.'
+        'meta_description' => 'Learn how Home Handyman Solutions protects your personal information. Read our privacy policy for details on data collection, usage, and security.'
     ]);
 });
 
@@ -55,6 +57,17 @@ Route::get('/dashboard', function () {
         'messages' => $messages
     ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware(['auth'])->prefix('dashboard')->group(function () {
+    Route::get('/posts', [PostAdminController::class, 'index'])->name('admin.posts.index');
+    Route::get('/posts/create', [PostAdminController::class, 'create'])->name('admin.posts.create');
+    Route::post('/posts', [PostAdminController::class, 'store'])->name('admin.posts.store');
+    Route::get('/posts/{post}/edit', [PostAdminController::class, 'edit'])->name('admin.posts.edit');
+    Route::post('/posts/{post}', [PostAdminController::class, 'update'])->name('admin.posts.update'); // con _method=PUT
+    Route::delete('/posts/{post}', [PostAdminController::class, 'destroy'])->name('admin.posts.destroy');
+});
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -85,7 +98,7 @@ Route::get('/posts', function () {
 
 Route::get('/posts/{slug}', function ($slug) {
     $post = Post::where('slug', $slug)->firstOrFail();
-    $post->content = json_decode($post->content);
+    // $post->content = json_decode($post->content);
     
     // Obtener los últimos 6 posts, excluyendo el post actual
     $posts = Post::latest('published_at')

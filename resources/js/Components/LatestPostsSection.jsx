@@ -26,7 +26,7 @@ export default function LatestPostsSection({ posts }) {
         <section id="projects" className="py-12 bg-gray-50">
             <div className="max-w-6xl mx-auto px-4">
                 <h2 className="text-3xl font-bold text-center text-gray-800">Latest Projects</h2>
-                <p className="text-center text-gray-600 mb-8">Discover our most recent work and inspections</p>
+                <p className="text-center text-gray-600 mb-8">Discover our most recent works</p>
 
                 <Slider {...settings} className="overflow-hidden sliderposts">
                     {posts.map(post => (

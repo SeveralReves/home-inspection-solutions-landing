@@ -19,8 +19,8 @@ export default function Authenticated({ user, header, children }) {
                                 <Link href="/">
                                 <img
                                     src={Logo}
-                                    alt="Logo Home Inspections"
-                                    title="Logo Home Inspections"
+                                    alt="Logo Home handyman solutions"
+                                    title="Logo Home handyman solutions"
                                     style={{ height: '50px' }}
                                 />
                                 </Link>
@@ -29,6 +29,9 @@ export default function Authenticated({ user, header, children }) {
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                                     Dashboard
+                                </NavLink>
+                                <NavLink href={route('admin.posts.index')} active={route().current('admin.posts.index')}>
+                                    Posts
                                 </NavLink>
                             </div>
                         </div>
