@@ -198,7 +198,6 @@ export default function Contact() {
                                 {services.map((service, index) => (
                                     <option key={index} value={service.title}>{service.title}</option>
                                 ))}
-                                <option value="Inspection">Inspections</option>
                                 {/* <option value="Handyman">Handyman</option>
                                 <option value="Maintenance">Maintenance</option> */}
                             </select>
