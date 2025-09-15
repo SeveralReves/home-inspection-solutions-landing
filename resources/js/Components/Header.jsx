@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react"; // Íconos del menú
 import styles from "./Header.module.css";
 import Logo from "../../assets/images/logos/handyman.png";
 
-export default function Header() {
+export default function Header({posts = []}) {
     const headerRef = useRef(null);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -26,9 +26,8 @@ export default function Header() {
     const links = [
         { url: "/#home", title: "Home" },
         { url: "/#handyman", title: "Handyman" },
-        // { url: "/#inspections", title: "Inspections" },
         { url: "/#about", title: "About Us" },
-        { url: "/#projects", title: "Latest Projects" },
+        ...(posts.length > 0 ? [{ url: "/#projects", title: "Latest Projects" }] : []), // 👈 condicional
     ];
 
     return (
