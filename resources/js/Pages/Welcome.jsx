@@ -23,7 +23,9 @@ export default function Welcome({ auth, laravelVersion, phpVersion, posts }) {
             <GoogleReviews />
             <HandymanServices />
             <PhotoGallery />
-            <LatestPostsSection posts={posts}/>
+            {posts?.length > 0 && (
+                <LatestPostsSection posts={posts}/>
+            )}
             <CertificatesBanner />
             <AboutUs />
             <GoogleReviews2 />
