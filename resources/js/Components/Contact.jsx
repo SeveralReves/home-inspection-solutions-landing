@@ -219,7 +219,7 @@ export default function Contact() {
                         {/* reCAPTCHA */}
                         <div className="flex justify-center">
                             <ReCAPTCHA
-                                sitekey="6Ld-V8orAAAAAAi2YC9ieti7fPC2RW4_aMKAsOTo"
+                                sitekey="6LdcY8orAAAAAEtzrbdaGpHw8x0lfEYqyYykH3SW"
                                 onChange={(value) => setCaptchaValue(value)}
                             />
                         </div>
