@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Message;
+use App\Services\SendGridService;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactFormSubmitted;
 
@@ -20,12 +21,12 @@ class MessageController extends Controller
             'captcha'     => 'nullable' // ya lo validaste en front
         ]);
 
-        Message::create($request->all());
-
-        Mail::to('hinspectionsolutions@gmail.com') // <-- A dónde llega el lead
-            ->send(new ContactFormSubmitted($validated));
+       $msg = Message::create($request->all());
 
 
-        return response()->json(['message' => 'Message received successfully!'], 201);
+        // 2. Enviar correo por SendGrid API (no SMTP)
+        $sent = SendGridService::sendLead($validated);
+
+        return response()->json(['message' => 'Message received successfully!', 'email_sent' => $sent,], 201);
     }
 }

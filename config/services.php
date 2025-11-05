@@ -30,5 +30,13 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    
+    'sendgrid' => [
+        'api_key'     => env('SENDGRID_API_KEY'),
+        'from_email'  => env('SENDGRID_FROM_EMAIL', 'no-reply@ihomehandyman.com'),
+        'from_name'   => env('SENDGRID_FROM_NAME', 'iHome Handyman'),
+        'to_email'    => env('SENDGRID_TO_EMAIL', 'gabrielalexander2@gmail.com'),
+    ],
+
 
 ];
