@@ -24,16 +24,11 @@ class SendGridService
         $email->setSubject('🔧 New Contact from iHome Handyman');
         $email->addTo($toEmail, 'iHome Handyman');
 
-        $body = "
-            <h2>New Contact Message</h2>
-            <p><strong>Name:</strong> {$data['name']}</p>
-            <p><strong>Email:</strong> {$data['email']}</p>
-            <p><strong>Phone:</strong> {$data['phone']}</p>
-            <p><strong>Service Type:</strong> " . ($data['serviceType'] ?? '') . "</p>
-            <p><strong>Message:</strong><br>{$data['message']}</p>
-        ";
+        $body = view('emails.lead', [
+            'quote' => $data,
+        ])->render();
 
-        $email->addContent("text/html", $body);
+        $email->addContent('text/html', $body);
 
         $sendgrid = new \SendGrid($apiKey);
 
@@ -45,7 +40,7 @@ class SendGridService
 
             return $response->statusCode() === 202;
         } catch (\Exception $e) {
-            Log::error("SendGrid error: " . $e->getMessage());
+            Log::error('SendGrid error: ' . $e->getMessage());
             return false;
         }
     }
