@@ -10,23 +10,11 @@ class ContactFormSubmitted extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data;
+    public function __construct(public array $quote) {}
 
-    /**
-     * Recibe los datos del form
-     */
-    public function __construct($data)
-    {
-        $this->data = $data;
-    }
-
-    /**
-     * Build
-     */
     public function build()
     {
-        return $this->subject('New lead from website - iHome Handyman')
-                    ->markdown('emails.contact')
-                    ->with('data', $this->data);
+        return $this->subject('🔧 New Contact from iHome Handyman')
+                    ->view('emails.lead');
     }
 }

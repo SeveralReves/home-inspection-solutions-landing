@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostAdminController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -59,6 +60,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {
+    Route::post('/messages/{message}/resend', [MessageController::class, 'resend'])->name('messages.resend');
     Route::get('/posts', [PostAdminController::class, 'index'])->name('admin.posts.index');
     Route::get('/posts/create', [PostAdminController::class, 'create'])->name('admin.posts.create');
     Route::post('/posts', [PostAdminController::class, 'store'])->name('admin.posts.store');
