@@ -38,5 +38,9 @@ return [
         'to_email'    => env('SENDGRID_TO_EMAIL', 'gabrielalexander2@gmail.com'),
     ],
 
+    'resend' => [
+        'key' => env('RESEND_API_KEY'),
+    ],
+
 
 ];
